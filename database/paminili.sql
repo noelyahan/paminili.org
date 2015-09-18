@@ -18,6 +18,7 @@ USE `paminili`;
 -- Dumping structure for table paminili.police_station
 CREATE TABLE IF NOT EXISTS `police_station` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) DEFAULT NULL,
   `province` varchar(50) DEFAULT '0',
   `district` varchar(50) DEFAULT '0',
   PRIMARY KEY (`id`)
