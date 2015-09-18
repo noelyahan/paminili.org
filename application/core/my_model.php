@@ -41,6 +41,17 @@ class MY_Model extends CI_Model {
     }
     
     /**
+     * Load from the database.
+     * @param int $id
+     */
+    public function loadByColumn($column,$value) {
+        $query = $this->db->get_where($this::DB_TABLE, array(
+            $column => $value,
+        ));
+        return $query->result();
+    }
+    
+    /**
      * Delete the current record.
      */
     public function delete() {
