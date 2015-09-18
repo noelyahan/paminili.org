@@ -40,9 +40,8 @@ CREATE TABLE IF NOT EXISTS `question` (
   `friendly` varchar(100) DEFAULT NULL,
   `intimidating` varchar(100) DEFAULT NULL,
   `humiliating` varchar(100) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `FK__police_station` (`police_station_id`),
-  CONSTRAINT `FK__police_station` FOREIGN KEY (`police_station_id`) REFERENCES `police_station` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  `score` double DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Data exporting was unselected.
