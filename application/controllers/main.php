@@ -6,6 +6,7 @@ class Main extends CI_Controller {
     }
     
     function home() {
+        $this->load->helper('url');
         $this->load->view('home');
     }
 }
