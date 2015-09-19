@@ -1,0 +1,110 @@
+{
+  "app":{
+    "name":"i18next"
+  },
+  "details": {
+    "buttons": {
+      "submitcomplain": "Submit Complain",
+      "view_police_rank": "View Police Rank",
+      "help": "Help"
+    },
+    "questions": {
+      "question1": "Select the Police Station",
+      "question2": {
+        "value": "Select the type of your complain",
+        "answers": {
+          "answer1": "Rape",
+          "answer2": "Child abuse",
+          "answer3": "Domestic Violence",
+          "answer4": "Sexual Harassment",
+          "answer5": "Theft",
+          "answer6": "Traffic Offences",
+          "answer7": "Other"
+        }
+      },
+      "question3": {
+        "value": "Was your complaint written down?",
+        "answers": {
+          "answer1": "Yes",
+          "answer2": "No"
+        }
+      },
+      "question4": {
+        "value": "How long did the Police take to start recording your complaint?",
+        "answers": {
+          "answer1": "Within 10 minutes",
+          "answer2": "10-20 Minutes",
+          "answer3": "20-30 Minutes",
+          "answer4": "More than 30 Minutes"
+        }
+      },
+      "question5": {
+        "value": "Was it recorded in our language?",
+        "answers": {
+          "answer1": {
+            "value": "Yes",
+            "option1": "I read and signed it",
+            "option2": "It was read to me and I signed",
+            "option3": "It was not read but signed",
+            "option4": "It was neither read nor signed"
+          },
+          "answer2": {
+            "value": "No",
+            "option1": {
+              "value": "Was a translator provided?",
+              "answer1": "Yes",
+              "answer2": "No"
+            }
+          }
+        }
+      },
+      "question6": {
+        "value": "If it is a complaint related to a woman or child,Were you given the assistance of a female police officer?",
+        "answers": {
+          "answer1": "Not applicable",
+          "answer2": "Yes",
+          "answer3": "No"
+        }
+      },
+      "question7": {
+        "value": "How long it was taken to direct to medical services?",
+        "answers": {
+          "answer1": "Not applicable",
+          "answer2": {
+            "value": "Yes",
+            "option1": "Within 1-6 Hours",
+            "option1": "Within 6-12 Hours",
+            "option3": "Within 12-24 hours",
+            "option4": "More than 24 hours"
+          },
+          "answer3": "Not sent"
+        }
+      },
+      "question8": {
+        "value": "Overall response?",
+        "answers": {
+          "answer1": {
+            "value": "Efficient",
+            "option1": "Yes",
+            "option2": "No"
+          },
+          "answer2": {
+            "value": "Intimidating ",
+            "option1": "Yes",
+            "option2": "No"
+          },
+          "answer3": {
+            "value": "menacing",
+            "option1": "Yes",
+            "option2": "No"
+          },
+          "answer4": {
+            "value": "Humiliating",
+            "option1": "Yes",
+            "option2": "No"
+          }
+        }
+      }
+    }
+  }
+}
