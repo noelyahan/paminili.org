@@ -173,18 +173,18 @@
     <script type="text/javascript">
         $("#sinhala").click(function () {
             localStorage.setItem('lan','sinhala')
-            window.location.href = "index.php/main/home";
+            window.location.href = "main/home";
 
         });
 
         $("#tamil").click(function () {
             localStorage.setItem('lan','tamil')
-            window.location.href = "index.php/main/home";
+            window.location.href = "main/home";
         });
 
         $("#english").click(function () {
             localStorage.setItem('lan','en')
-            window.location.href = "index.php/main/home";
+            window.location.href = "main/home";
         });
     </script>
 
