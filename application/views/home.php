@@ -67,9 +67,9 @@ h1 {
     
     <!-- HTML code from Bootply.com editor -->
     
-    <body>
+    <body class="details">
         
-        <div class="container-full">
+        <div class="container-full ">
 
 			<div class="row">
 		   
@@ -79,11 +79,11 @@ h1 {
 				  <p class="lead">A sign-up page example for Bootstrap 3</p>				  
 				  <br>
 				  
-					<div class="container-fluid">      
+					<div class="container-fluid">
 			
-					<a href="questions.html" class="btn btn-primary btn-lg btn-block">Submit Complain</a>
-					<a href="stats.html" class="btn btn-primary btn-lg btn-block">View Police Ranks</a>
-					<a href="help.html" class="btn btn-primary btn-lg btn-block">Help</a>
+					<a href="questions.html" class="btn btn-primary btn-lg btn-block" data-i18n="details.buttons.submitcomplain"></a>
+					<a href="stats.html" class="btn btn-primary btn-lg btn-block" data-i18n="details.buttons.view_police_rank"></a>
+					<a href="help.html" class="btn btn-primary btn-lg btn-block" data-i18n="details.buttons.help"></a>
             
 					</div>
 
@@ -123,15 +123,21 @@ h1 {
 
         
         <!-- JavaScript jQuery code from Bootply.com editor  -->
-        
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/i18next/1.9.0/i18next.js"></script>
+
         <script type="text/javascript">
-        
-        $(document).ready(function() {
-        
-            
-        
-        });
-        
+            var lang =  localStorage.getItem('lan');
+            var options ={
+                lng : lang,
+                resGetPath:"http://localhost/paminili.org/assets/locales/"+lang+"/translation.json"
+            };
+            i18n.init(options, function(t) {
+                console.log(t);
+                $(".details").i18n();
+            });
+
+
         </script>
         
         <script>
@@ -145,4 +151,5 @@ h1 {
         
         
     
-</body></html>
+</body>
+</html>
