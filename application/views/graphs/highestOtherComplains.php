@@ -2,8 +2,8 @@
 <html>
 <head>
     <title>Bar Chart</title>
-    <script src="assets/js/Chart.js"></script>
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script src="http://localhost/paminili.org/assets/js/Chart.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://localhost/paminili.org/assets/css/style.css">
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
 </head>
 

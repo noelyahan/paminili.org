@@ -15,11 +15,12 @@
           "rape": "Police station with highest rape complains",
           "child": "Police station with highest child abuse complains",
           "domestic": "Police station with highest domestic Violence complains",
-          "sexual": "Police station with highest sexual Harassment complains",
+          "sexual": "Problem categories reported in the country",
           "theft": "Police station with highest theft complains",
           "traffic": "Police station with highest traffic offences complains",
           "other": "Police station with highest other complains",
-          "worst" : "Worst rated police station"
+          "worst" : "Worst rated police station",
+          "home": "Home Page"
         }
     },
     "province":{
