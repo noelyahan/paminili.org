@@ -36,6 +36,12 @@
          "district2" : "ගාල්ල",
          "district3" : "මාතර"
       },
+      "police_stations":{
+        "station1" :  "ඇබිලිපිටිය",
+        "station2" : "තංගල්ල",
+        "station3" : "ලුණුගම්වෙහෙර",
+        "station4" : "කටුවන"
+      },
       "questions": {
          "question1": "පොලිස් ස්ථානය තෝරන්න.",
          "question2": {
