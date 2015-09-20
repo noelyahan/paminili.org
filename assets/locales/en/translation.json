@@ -36,6 +36,12 @@
       "district2" : "Galle",
       "district3" : "Mathara"
     },
+    "police_stations":{
+      "station1" :  "Embilipitiya",
+      "station2" : "Thangalla",
+      "station3" : "Lunugamwehera",
+      "station4" : "Katuwana"
+    },
     "questions": {
       "question1": "Select the Police Station",
       "question2": {
