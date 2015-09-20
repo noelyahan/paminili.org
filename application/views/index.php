@@ -44,6 +44,8 @@
         }
 
         h1 {
+            width:100%;
+            height:auto;
             font-family: 'Antic Slab', serif;
             font-size: 80px;
             color: #DDCCEE;
