@@ -1,7 +1,7 @@
 <html lang="en"><head><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-start{clip:rect(0,auto,auto,0);-ms-zoom:1.0001;}.ng-animate-active{clip:rect(-1px,auto,auto,0);-ms-zoom:1;}</style>
         <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
         <meta charset="utf-8">
-        <title>Bootply snippet - Bootply Bootstrap Preview</title>
+        <title>Paminili.org</title>
         <meta name="generator" content="Bootply">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <meta name="description" content="">
@@ -76,7 +76,7 @@ h1 {
 				<div class="col-lg-12 text-center v-center">
 				  
 				  <h1>Paminili.org</h1>
-				  <p class="lead">A sign-up page example for Bootstrap 3</p>				  
+				  <p class="lead">For a better police service</p>
 				  <br>
 				  
 					<div class="container-fluid">

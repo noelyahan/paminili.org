@@ -47,6 +47,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script>
         $(function () {
+            $("#thankyoudiv").hide();
 
             function swapDivs(tohide, toshow) {
                 $("#" + tohide).hide();
@@ -69,10 +70,11 @@
                 //when police is selected and next clicked
                 if ($(this).attr('id') == "policeSelectedNextBtn") {
                     swapDivs("q1police", "q2complaintype");
-                    post_data["province"] = $("provinceSelect").value
-                    post_data["district"] = $("districtSelect").value
-                    post_data["policestation"] = $("policeStationSelect").value
-                    obj.police_station_id=1;
+                    post_data["province"] = $("provinceSelect").value;
+                    post_data["district"] = $("districtSelect").value;
+                    post_data["policestation"] = $("policeStationSelect").value;
+                    obj.police_station_id=$("select[id='policeStationSelect'] option:selected").index()+1;
+
                 }
 
                 //when complain type is entered
@@ -224,6 +226,8 @@
                     post_data["score"]=total;
                     obj.score=total;
                     $.get( "http://localhost/paminili.org/Questioner/add", obj);
+                    $("#thankyoudiv").show();
+
                 }
 
             })
@@ -255,7 +259,7 @@
         }</style>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
-    <title>Bootply snippet - Bootstrap </title>
+    <title>Paminili.org</title>
     <meta name="generator" content="Bootply">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="Bootstrap  example snippet for Bootstrap.">
