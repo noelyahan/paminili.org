@@ -4,11 +4,17 @@
     /**
      * Created by Ershadi on 9/19/2015.
      */
-    var loadDistricts = function (value) {
+    /*var loadDistricts = function (value,lan) {
         if (value == "Southern") {
             var districtSelect = document.getElementById("districtSelect");
             districtSelect.options.length = 0;
             var districtsArray = ["Galle", "Hambanthota", "Matara"];
+            if(lan == 'sinhala'){
+                districtsArray = ["?????????", "Hambanthota", "Matara"];
+            }else if(lan == 'tamil'){
+                districtsArray = ["Galle", "Hambanthota", "Matara"];
+            }
+
 
             for (var i = 0; i < districtsArray.length; i++) {
                 var opt = districtsArray[i];
@@ -20,14 +26,19 @@
         } else {
             districtSelect.options.length = 0;
         }
-    }
+    }*/
 
-    var loadPoliceDevisions = function (value) {
-        if (value == "Hambanthota") {
+    var loadPoliceDevisions = function (value,lan) {
+        //if (value == "Hambanthota") {
+
             var policeStationSelect = document.getElementById("policeStationSelect");
             policeStationSelect.options.length = 0;
             var policeStationsArray = ["Embilipitiya", "Tangalle", "Lunugamwehera", "Katuwana"];
-
+            if(lan == 'sinhala'){
+                policeStationsArray = ["??????????", "?????? ", "???????????? ", "?????"];
+            }else if(lan == 'tamil'){
+                policeStationsArray = ["???????ip?????", "?????????", "?????????????", "?????????"];
+            }
             for (var i = 0; i < policeStationsArray.length; i++) {
                 var opt = policeStationsArray[i];
                 var el = document.createElement("option");
@@ -35,9 +46,9 @@
                 el.value = opt;
                 policeStationSelect.appendChild(el);
             }
-        } else {
+        /*} else {
             policeStationSelect.options.length = 0;
-        }
+        }*/
     }
 
 </script>
@@ -329,11 +340,11 @@
             <p class="lead" data-i18n="details.province.question"></p>
 
             <div class="input-group input-group-lg col-sm-offset-4 col-sm-4">
-                <select class="form-control" id="provinceSelect" onclick="loadDistricts(this.value)">
-                    <option data-i18n="details.province.province1" value="Central"></option>
+                <select class="form-control" id="provinceSelect">
+                    <!--<option data-i18n="details.province.province1" value="Central"></option>
                     <option data-i18n="details.province.province2" value="Eastern"></option>
                     <option data-i18n="details.province.province3" value="North Central"></option>
-                    <option data-i18n="details.province.province4" value="Northern"></option>
+                    <option data-i18n="details.province.province4" value="Northern"></option>-->
                     <option value="Southern" data-i18n="details.province.province5"></option>
                 </select>
             </div>
@@ -343,7 +354,7 @@
             <p class="lead" data-i18n="details.district.question"></p>
 
             <div class="input-group input-group-lg col-sm-offset-4 col-sm-4">
-                <select class="form-control" id="districtSelect" onclick="loadPoliceDevisions(this.value)">
+                <select class="form-control" id="districtSelect">
                     <option data-i18n="details.district.district1" value="Hambanthota"></option>
                     <option data-i18n="details.district.district2" value="Galle"></option>
                     <option data-i18n="details.district.district3" value="Mathara"></option>
@@ -356,9 +367,11 @@
 
             <div class="input-group input-group-lg col-sm-offset-4 col-sm-4">
                 <select class="form-control" id="policeStationSelect">
+                    <option data-i18n="details.police_stations.station1" value="Embilipitiya"></option>
+                    <option data-i18n="details.police_stations.station2" value="Tamgalla"></option>
+                    <option data-i18n="details.police_stations.station3" value="Lunugamwehera"></option>
+                    <option data-i18n="details.police_stations.station4" value="Katuwana"></option>
                 </select>
-
-
             </div>
             <br><br>
 
@@ -803,6 +816,7 @@
             console.log(t);
             $(".details").i18n();
         });
+        //loadPoliceDevisions(null,lang);
     </script>
 
 
