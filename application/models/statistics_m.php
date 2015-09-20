@@ -9,6 +9,13 @@ class Statistics_m extends CI_Model {
                                     GROUP BY police_station.id ORDER BY 2 DESC LIMIT 10");
         return $query->result();
     }
+    public function getWorstRatedPoliceStation() {
+        $query = $this->db->query("SELECT police_station.name,SUM(question.score) AS 'avg_score'
+                                    FROM police_station ,question
+                                    WHERE  police_station.id=question.police_station_id
+                                    GROUP BY police_station.id ORDER BY 2 ASC LIMIT 10");
+        return $query->result();
+    }
 
     public function getProbilemTypeVsNoOfComplaints() {
         $query = $this->db->query("SELECT q.complain_type, COUNT(q.id) AS 'no_of_Complains'

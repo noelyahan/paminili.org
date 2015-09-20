@@ -25,6 +25,24 @@
                     post_data["province"] = $("provinceSelect").value
                     post_data["district"] = $("districtSelect").value
                     post_data["policestation"] = $("policeStationSelect").value
+                } else if ($(this).attr('id') == "highestRatedBtn") {
+                    window.open("http://localhost/paminili.org/main/loadBestRatedPoliceStations");
+                } else if ($(this).attr('id') == "rapeBtn") {
+                    window.open("http://localhost/paminili.org/main/loadHighestRapeComplains");
+                } else if ($(this).attr('id') == "childBtn") {
+                    window.open("http://localhost/paminili.org/main/loadHighestChildAbuseComplains");
+                } else if ($(this).attr('id') == "domesticBtn") {
+                    window.open("http://localhost/paminili.org/main/loadHighestDomesticViolenceComplains");
+                } else if ($(this).attr('id') == "sexualBtn") {
+                    window.open("http://localhost/paminili.org/main/loadProblemTypesGraph");
+                } else if ($(this).attr('id') == "trafficBtn") {
+                    window.open("http://localhost/paminili.org/main/loadHighestTrafficOffenceComplains");
+                } else if ($(this).attr('id') == "theftBtn") {
+                    window.open("http://localhost/paminili.org/main/loadHighestTheftComplains");
+                } else if ($(this).attr('id') == "otherBtn") {
+                    window.open("http://localhost/paminili.org/main/loadHighestOtherComplains");
+                } else if ($(this).attr('id') == "worstRatedBtn") {
+                    window.open("http://localhost/paminili.org/main/loadWorstRatedPoliceStations");
                 }
             });
         });
@@ -121,8 +139,15 @@
             <br>
 
             <div class="container-fluid">
-                <button id="higestratedBtn" class="btn btn-primary btn-lg btn-block"
+                <button id="highestRatedBtn" class="btn btn-primary btn-lg btn-block"
                         data-i18n="details.statistic.titles.bestrate"></button>
+                <br>
+                <button id="worstRatedBtn" class="btn btn-primary btn-lg btn-block"
+                        data-i18n="details.statistic.titles.worst"></button>
+                <br>
+                <button id="sexualBtn" class="btn btn-primary btn-lg btn-block"
+                        data-i18n="details.statistic.titles.sexual"
+                    ></button>
                 <br>
                 <button id="rapeBtn" class="btn btn-primary btn-lg btn-block"
                         data-i18n="details.statistic.titles.rape"></button>
@@ -133,10 +158,6 @@
                 <button id="domesticBtn" class="btn btn-primary btn-lg btn-block"
                         data-i18n="details.statistic.titles.domestic"></button>
                 <br>
-                <button id="sexualBtn" class="btn btn-primary btn-lg btn-block"
-                        data-i18n="details.statistic.titles.sexual"
-                        ></button>
-                <br>
                 <button id="trafficBtn" class="btn btn-primary btn-lg btn-block"
                         data-i18n="details.statistic.titles.traffic"></button>
                 <br>
@@ -146,10 +167,6 @@
                 <button id="otherBtn" class="btn btn-primary btn-lg btn-block"
                         data-i18n="details.statistic.titles.other"></button>
                 <br>
-                <button id="worstBtn" class="btn btn-primary btn-lg btn-block"
-                        data-i18n="details.statistic.titles.worst"></button>
-                <br>
-
             </div>
 
         </div>

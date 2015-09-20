@@ -5,9 +5,14 @@ class Statistics extends CI_Controller {
       
     }
     public function getAverageScoreVsPoliceStationData() {
+    $this->load->model('Statistics_m');
+    $statistics = new Statistics_m();
+    echo json_encode($statistics->getAverageScoreVsPoliceStationData());
+}
+    public function getWorstRatedPoliceStation() {
         $this->load->model('Statistics_m');
         $statistics = new Statistics_m();
-        echo json_encode($statistics->getAverageScoreVsPoliceStationData());
+        echo json_encode($statistics->getWorstRatedPoliceStation());
     }
     public function getProbilemTypeVsNoOfComplaints() {
         $this->load->model('Statistics_m');
@@ -24,6 +29,7 @@ class Statistics extends CI_Controller {
         $statistics = new Statistics_m();
         echo json_encode($statistics->getHighestChildAbuseComplaintCountByPoliceStation());
     }
+
     public function getHighestDomesticViolenceComplaintCountByPoliceStation() {
         $this->load->model('Statistics_m');
         $statistics = new Statistics_m();

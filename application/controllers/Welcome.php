@@ -58,5 +58,4 @@ class Welcome extends CI_Controller {
 	function loadWorstRatedPoliceStations(){
 		$this->load->view('graphs/worstRatedPoliceStations');
 	}
-
 }
