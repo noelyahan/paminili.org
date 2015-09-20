@@ -52,38 +52,63 @@
                 $("#" + tohide).hide();
                 $("#" + toshow).show();
             }
-
+            var post_data;
             $('button').click(function () {
+                var value = $(this).attr('data-value');
+                var score = $(this).attr('data-score');
+                var questionNo = $(this).attr('data-qno');
+                if( post_data == null){
+                    post_data={};
+                }
 
                 //when police is selected and next clicked
                 if ($(this).attr('id') == "policeSelectedNextBtn") {
                     swapDivs("q1police", "q2complaintype");
+                    post_data["province"] = $("provinceSelect").value
+                    post_data["district"] = $("districtSelect").value
+                    post_data["policestation"] = $("policeStationSelect").value
                 }
 
                 //when complain type is entered
                 if ($(this).attr('id') == "complaintypebtn") {
                     swapDivs("q2complaintype", "writtendowndiv");
+                    post_data["questions"] ={};
+                    post_data["questions"]["complaintype"] = {};
+                    post_data["questions"]["complaintype"]["answer"] = value;
+                    post_data["questions"]["complaintype"]["score"] = 0;
                 }
 
                 //if the complain is written down
                 if ($(this).attr('id') == "yeswrittenbtn") {
                     swapDivs("writtendowndiv", "howlongdiv");
+                    post_data["questions"]["isComplainNoted"] = {};
+                    post_data["questions"]["isComplainNoted"]["answer"] = value;
+                    post_data["questions"]["isComplainNoted"]["score"] = score;
                 }
 
                 //if complain is not written
                 if ($(this).attr('id') == "notwrittenbtn") {
                     swapDivs("writtendowndiv", "efficiantdev");
+                    post_data["questions"]["isComplainNoted"] = {};
+                    post_data["questions"]["isComplainNoted"]["answer"] = value;
+                    post_data["questions"]["isComplainNoted"]["score"] = score;
                 }
 
 
                 //how long taken for the complain
                 if ($(this).attr('id') == "howlongbtn") {
                     swapDivs("howlongdiv", "yourlangdiv");
+                    post_data["questions"]["complainTime"] ={};
+                    post_data["questions"]["complainTime"]["answer"] = value;
+                    post_data["questions"]["complainTime"]["score"] = score;
                 }
 
                 //your language?
                 if ($(this).attr('id') == "yourlangyesbtn") {
                     swapDivs("yourlangdiv", "yourlangyesdiv");
+                    post_data["questions"]["complainTime"] = {};
+                    post_data["questions"]["complainTime"]["score"] = score;
+                    post_data["questions"]["complainTime"]["answer"] = value;
                 }
 
                 //your language no menu
@@ -94,16 +119,25 @@
                 //translator menu
                 if ($(this).attr('id') == "translatorbtn") {
                     swapDivs("translatordiv", "womenchilddev");
+                    post_data["questions"]["isTranslatorAvailable"] ={}
+                    post_data["questions"]["isTranslatorAvailable"]["score"] = score;
+                    post_data["questions"]["isTranslatorAvailable"]["answer"] = value;
                 }
 
                 //your language yes menu
                 if ($(this).attr('id') == "yourlangyesmenubtn") {
                     swapDivs("yourlangyesdiv", "womenchilddev");
+                    post_data["questions"]["isYourLaunguage"] = {};
+                    post_data["questions"]["isYourLaunguage"]["score"] = score;
+                    post_data["questions"]["isYourLaunguage"]["answer"] = value;
                 }
 
                 //women child menu
                 if ($(this).attr('id') == "womenchildbtn") {
                     swapDivs("womenchilddev", "medicalreq");
+                    post_data["questions"]["womenchild"] = {};
+                    post_data["questions"]["womenchild"]["score"] = score;
+                    post_data["questions"]["womenchild"]["answer"] = value;
                 }
 
                 //if medical assistant needed
@@ -114,34 +148,59 @@
                 //medical assistance not needed
                 if ($(this).attr('id') == "medicalreqbtn") {
                     swapDivs("medicalreq", "efficiantdev");
+                    post_data["questions"]["medicalassitance"] = {};
+                    post_data["questions"]["medicalassitance"]["score"] = score;
+                    post_data["questions"]["medicalassitance"]["answer"] = value;
                 }
 
                 //medical service menu
                 if ($(this).attr('id') == "medicaldevbtn") {
                     swapDivs("medicaldev", "efficiantdev");
+                    post_data["questions"]["medicalassitance"] ={};
+                    post_data["questions"]["medicalassitance"]["score"] = score;
+                    post_data["questions"]["medicalassitance"]["answer"] = value;
                 }
 
                 //efficient menu
                 if ($(this).attr('id') == "efficientbtn") {
                     swapDivs("efficiantdev", "friendlydev");
+                    post_data["questions"]["efficient"] = {};
+                    post_data["questions"]["efficient"]["score"] = score;
+                    post_data["questions"]["efficient"]["answer"] = value;
                 }
 
                 //friendly menu
                 if ($(this).attr('id') == "friendlybtn") {
                     swapDivs("friendlydev", "intimidatedev");
-
+                    post_data["questions"]["friendly"]={};
+                    post_data["questions"]["friendly"]["score"] = score;
+                    post_data["questions"]["friendly"]["answer"] = value;
                 }
 
                 //intimidate menu
                 if ($(this).attr('id') == "intimidatebtn") {
                     swapDivs("intimidatedev", "humiliatedev");
+                    post_data["questions"]["intimidate"]={};
+                    post_data["questions"]["intimidate"]["score"] = score;
+                    post_data["questions"]["intimidate"]["answer"] = value;
 
                 }
 
                 //intimidate menu
                 if ($(this).attr('id') == "humiliatebtn") {
                     swapDivs("humiliatedev", "thankyoudev");
-
+                    post_data["questions"]["humiliate"]={};
+                    post_data["questions"]["humiliate"]["score"] = score;
+                    post_data["questions"]["humiliate"]["answer"] = value;
+                    var total = 0;
+                    $.each(post_data["questions"], function(i, item) {
+                        if(parseInt(item.score)>0){
+                            total += parseInt(item.score);
+                        }
+                    });
+                    console.log("Your total is  : "+total);
+                    console.log(JSON.stringify(post_data))
+                    post_data["score"]=total;
                 }
 
             })
@@ -243,10 +302,10 @@
 
             <div class="input-group input-group-lg col-sm-offset-4 col-sm-4">
                 <select class="form-control" id="provinceSelect" onclick="loadDistricts(this.value)">
-                    <option data-i18n="details.province.province1"></option>
-                    <option data-i18n="details.province.province2"></option>
-                    <option data-i18n="details.province.province3"></option>
-                    <option data-i18n="details.province.province4"></option>
+                    <option data-i18n="details.province.province1" value="Central"></option>
+                    <option data-i18n="details.province.province2" value="Eastern"></option>
+                    <option data-i18n="details.province.province3" value="North Central"></option>
+                    <option data-i18n="details.province.province4" value="Northern"></option>
                     <option value="Southern" data-i18n="details.province.province5"></option>
                 </select>
             </div>
@@ -257,6 +316,9 @@
 
             <div class="input-group input-group-lg col-sm-offset-4 col-sm-4">
                 <select class="form-control" id="districtSelect" onclick="loadPoliceDevisions(this.value)">
+                    <option data-i18n="details.district.district1" value="Hambanthota"></option>
+                    <option data-i18n="details.district.district2" value="Galle"></option>
+                    <option data-i18n="details.district.district3" value="Mathara"></option>
                 </select>
             </div>
 
@@ -295,24 +357,31 @@
 
             <div class="container-fluid">
                 <button id="complaintypebtn" class="btn btn-primary btn-lg btn-block"
+                        data-score="0" data-value="Rape" data-qno="2"
                         data-i18n="details.questions.question2.answers.answer1"></button>
                 <br>
                 <button id="complaintypebtn" class="btn btn-primary btn-lg btn-block"
+                        data-score="0" data-value="Child abuse" data-qno="2"
                         data-i18n="details.questions.question2.answers.answer2"></button>
                 <br>
                 <button id="complaintypebtn" class="btn btn-primary btn-lg btn-block"
+                        data-score="0" data-value="Domestic Violence" data-qno="2"
                         data-i18n="details.questions.question2.answers.answer3"></button>
                 <br>
                 <button id="complaintypebtn" class="btn btn-primary btn-lg btn-block"
+                        data-score="0" data-value="Sexual Harassment" data-qno="2"
                         data-i18n="details.questions.question2.answers.answer4"></button>
                 <br>
                 <button id="complaintypebtn" class="btn btn-primary btn-lg btn-block"
+                        data-score="0" data-value="Theft" data-qno="2"
                         data-i18n="details.questions.question2.answers.answer5"></button>
                 <br>
                 <button id="complaintypebtn" class="btn btn-primary btn-lg btn-block"
+                        data-score="0" data-value="Traffic Offences" data-qno="2"
                         data-i18n="details.questions.question2.answers.answer6"></button>
                 <br>
                 <button id="complaintypebtn" class="btn btn-primary btn-lg btn-block"
+                        data-score="0" data-value="Other" data-qno="2"
                         data-i18n="details.questions.question2.answers.answer7"></button>
                 <br>
             </div>
@@ -333,9 +402,11 @@
 
             <div class="container-fluid">
                 <button id="yeswrittenbtn" class="btn btn-primary btn-lg btn-block"
+                        data-score="10" data-value="Yes" data-qno="3"
                         data-i18n="details.questions.question3.answers.answer1"></button>
                 <br>
                 <button id="notwrittenbtn" class="btn btn-primary btn-lg btn-block"
+                        data-score="0" data-value="No" data-qno="3"
                         data-i18n="details.questions.question3.answers.answer2"></button>
             </div>
 
@@ -355,15 +426,19 @@
 
             <div class="container-fluid">
                 <button id="howlongbtn" class="btn btn-primary btn-lg btn-block"
+                        data-score="10" data-value="Within 10 minutes" data-qno="4"
                         data-i18n="details.questions.question4.answers.answer1"></button>
                 <br>
                 <button id="howlongbtn" class="btn btn-primary btn-lg btn-block"
+                        data-score="8" data-value="10-20 Minutes" data-qno="4"
                         data-i18n="details.questions.question4.answers.answer2"></button>
                 <br>
                 <button id="howlongbtn" class="btn btn-primary btn-lg btn-block"
+                        data-score="5" data-value="20-30 Minutes" data-qno="4"
                         data-i18n="details.questions.question4.answers.answer3"></button>
                 <br>
                 <button id="howlongbtn" class="btn btn-primary btn-lg btn-block"
+                        data-score="0" data-value="More than 30 Minutes" data-qno="4"
                         data-i18n="details.questions.question4.answers.answer4"></button>
                 <br>
             </div>
@@ -384,9 +459,11 @@
 
             <div class="container-fluid">
                 <button id="yourlangyesbtn" class="btn btn-primary btn-lg btn-block"
+                        data-score="" data-value="Yes" data-qno="5"
                         data-i18n="details.questions.question5.answers.answer1.value"></button>
                 <br>
                 <button id="yourlangnobtn" class="btn btn-primary btn-lg btn-block"
+                        data-score="" data-value="No" data-qno="5"
                         data-i18n="details.questions.question5.answers.answer2.value"></button>
             </div>
 
@@ -405,9 +482,11 @@
 
             <div class="container-fluid">
                 <button id="translatorbtn" class="btn btn-primary btn-lg btn-block"
+                        data-score="10" data-value="Yes" data-qno="5"
                         data-i18n="details.questions.question5.answers.answer2.option1.answer1"></button>
                 <br>
                 <button id="translatorbtn" class="btn btn-primary btn-lg btn-block"
+                        data-score="0" data-value="No" data-qno="5"
                         data-i18n="details.questions.question5.answers.answer2.option1.answer2"></button>
             </div>
 
@@ -427,15 +506,19 @@
 
             <div class="container-fluid">
                 <button id="yourlangyesmenubtn" class="btn btn-primary btn-lg btn-block"
+                        data-score="10" data-value="I read and signed it" data-qno="5"
                         data-i18n="details.questions.question5.answers.answer1.option1"></button>
                 <br>
                 <button id="yourlangyesmenubtn" class="btn btn-primary btn-lg btn-block"
+                        data-score="10" data-value="It was read to me and I signed" data-qno="5"
                         data-i18n="details.questions.question5.answers.answer1.option2"></button>
                 <br>
                 <button id="yourlangyesmenubtn" class="btn btn-primary btn-lg btn-block"
+                        data-score="0" data-value="It was not read but signed" data-qno="5"
                         data-i18n="details.questions.question5.answers.answer1.option3"></button>
                 <br>
                 <button id="yourlangyesmenubtn" class="btn btn-primary btn-lg btn-block"
+                        data-score="0" data-value="It was neither read nor signed" data-qno="5"
                         data-i18n="details.questions.question5.answers.answer1.option4"></button>
             </div>
 
@@ -455,12 +538,15 @@
 
             <div class="container-fluid">
                 <button id="womenchildbtn" class="btn btn-primary btn-lg btn-block"
+                        data-score="0" data-value="Not applicable" data-qno="6"
                         data-i18n="details.questions.question6.answers.answer1"></button>
                 <br>
                 <button id="womenchildbtn" class="btn btn-primary btn-lg btn-block"
+                        data-score="10" data-value="Yes" data-qno="6"
                         data-i18n="details.questions.question6.answers.answer2"></button>
                 <br>
                 <button id="womenchildbtn" class="btn btn-primary btn-lg btn-block"
+                        data-score="0" data-value="No" data-qno="6"
                         data-i18n="details.questions.question6.answers.answer3"></button>
             </div>
 
@@ -480,12 +566,15 @@
 
             <div class="container-fluid">
                 <button id="medicalreqbtn" class="btn btn-primary btn-lg btn-block"
+                        data-score="" data-value="Not applicable" data-qno="7"
                         data-i18n="details.questions.question7.answers.answer1"></button>
                 <br>
                 <button id="medicalreqyes" class="btn btn-primary btn-lg btn-block"
+                        data-score="" data-value="Yes" data-qno="7"
                         data-i18n="details.questions.question7.answers.answer2.value"></button>
                 <br>
                 <button id="medicalreqbtn" class="btn btn-primary btn-lg btn-block"
+                        data-score="" data-value="Not Sent" data-qno="7"
                         data-i18n="details.questions.question7.answers.answer3"></button>
             </div>
 
@@ -506,15 +595,19 @@
             <div class="container-fluid">
 
                 <button id="medicaldevbtn" class="btn btn-primary btn-lg btn-block"
+                        data-score="10" data-value="Within 1-6 Hours" data-qno="7"
                         data-i18n="details.questions.question7.answers.answer2.option1"></button>
                 <br>
                 <button id="medicaldevbtn" class="btn btn-primary btn-lg btn-block"
+                        data-score="5" data-value="Within 6-12 Hours" data-qno="7"
                         data-i18n="details.questions.question7.answers.answer2.option2"></button>
                 <br>
                 <button id="medicaldevbtn" class="btn btn-primary btn-lg btn-block"
+                        data-score="2" data-value="Within 12-24 hours" data-qno="7"
                         data-i18n="details.questions.question7.answers.answer2.option3"></button>
                 <br>
                 <button id="medicaldevbtn" class="btn btn-primary btn-lg btn-block"
+                        data-score="0" data-value="More than 24 hours" data-qno="7"
                         data-i18n="details.questions.question7.answers.answer2.option4"></button>
                 <br>
             </div>
@@ -528,14 +621,16 @@
 
         <div class="col-lg-12 text-center v-center">
 
-            <p class="lead" data-i18n="details.questions.question8..answer1.value"></p>
+            <p class="lead" data-i18n="details.questions.question8.answers.answer1.value"></p>
             <br>
 
             <div class="container-fluid">
                 <button id="efficientbtn" class="btn btn-primary btn-lg btn-block"
+                        data-score="10" data-value="Yes" data-qno="8"
                         data-i18n="details.questions.question8.answers.answer1.option1"></button>
                 <br>
                 <button id="efficientbtn" class="btn btn-primary btn-lg btn-block"
+                        data-score="0" data-value="No" data-qno="8"
                         data-i18n="details.questions.question8.answers.answer1.option2"></button>
             </div>
 
@@ -554,9 +649,11 @@
 
             <div class="container-fluid">
                 <button id="friendlybtn" class="btn btn-primary btn-lg btn-block"
+                        data-score="10" data-value="Yes" data-qno="8"
                         data-i18n="details.questions.question8.answers.answer2.option1"></button>
                 <br>
                 <button id="friendlybtn" class="btn btn-primary btn-lg btn-block"
+                        data-score="0" data-value="No" data-qno="8"
                         data-i18n="details.questions.question8.answers.answer2.option2"></button>
             </div>
 
@@ -574,9 +671,11 @@
 
             <div class="container-fluid">
                 <button id="intimidatebtn" class="btn btn-primary btn-lg btn-block"
+                        data-score="0" data-value="Yes" data-qno="8"
                         data-i18n="details.questions.question8.answers.answer3.option1"></button>
                 <br>
                 <button id="intimidatebtn" class="btn btn-primary btn-lg btn-block"
+                        data-score="10" data-value="No" data-qno="8"
                         data-i18n="details.questions.question8.answers.answer3.option2"></button>
             </div>
 
@@ -594,9 +693,11 @@
 
             <div class="container-fluid">
                 <button id="humiliatebtn" class="btn btn-primary btn-lg btn-block"
+                        data-score="0" data-value="Yes" data-qno="8"
                         data-i18n="details.questions.question8.answers.answer4.option1"></button>
                 <br>
                 <button id="humiliatebtn" class="btn btn-primary btn-lg btn-block"
+                        data-score="10" data-value="No" data-qno="8"
                         data-i18n="details.questions.question8.answers.answer4.option2"></button>
             </div>
 
