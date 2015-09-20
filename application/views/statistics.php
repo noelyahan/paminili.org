@@ -139,8 +139,6 @@
             <br>
 
             <div class="container-fluid">
-                <button id="homeBtn" class="btn btn-primary btn-lg btn-block"
-                        data-i18n="details.statistic.titles.home"></button>
                 <button id="highestRatedBtn" class="btn btn-primary btn-lg btn-block"
                         data-i18n="details.statistic.titles.bestrate"></button>
                 <br>
