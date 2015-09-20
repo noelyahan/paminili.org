@@ -750,10 +750,7 @@
 	<div id="thankyoudiv" style="display: none;" class="row">
 
         <div class="col-lg-12 text-center v-center">
-
-            <h1>Thank You</h1>
-
-            <p class="lead">You successfully submitted your feedback. Click below to view statistics.</p>
+            <p class="lead" data-i18n="details.thankyou"></p>
 
             <br>
 
