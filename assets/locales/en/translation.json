@@ -14,7 +14,7 @@
       "province2" : "Eastern",
       "province3" : "North Central",
       "province4" : "Northern",
-      "province5" : "Southern",
+      "province5" : "Southern"
     },
     "district":{
       "question" : "Select the district",
