@@ -8,6 +8,20 @@
       "view_police_rank": "View Police Rank",
       "help": "Help"
     },
+    "province":{
+      "question" : "Select the province of the relevant police station",
+      "province1" : "Central",
+      "province2" : "Eastern",
+      "province3" : "North Central",
+      "province4" : "Northern",
+      "province5" : "Southern",
+    },
+    "district":{
+      "question" : "Select the district",
+      "district1" : "Hambanthota",
+      "district2" : "Galle",
+      "district3" : "Mathara"
+    },
     "questions": {
       "question1": "Select the Police Station",
       "question2": {
@@ -84,22 +98,22 @@
         "value": "Overall response?",
         "answers": {
           "answer1": {
-            "value": "Efficient",
+            "value": "Overall response :Efficient ?",
             "option1": "Yes",
             "option2": "No"
           },
           "answer2": {
-            "value": "Intimidating ",
+            "value": "Overall response : Intimidating ",
             "option1": "Yes",
             "option2": "No"
           },
           "answer3": {
-            "value": "menacing",
+            "value": "Overall response :menacing",
             "option1": "Yes",
             "option2": "No"
           },
           "answer4": {
-            "value": "Humiliating",
+            "value": "Overall response :Humiliating",
             "option1": "Yes",
             "option2": "No"
           }

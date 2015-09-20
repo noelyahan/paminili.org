@@ -81,9 +81,9 @@ h1 {
 				  
 					<div class="container-fluid">
 			
-					<a href="questions.html" class="btn btn-primary btn-lg btn-block" data-i18n="details.buttons.submitcomplain"></a>
-					<a href="stats.html" class="btn btn-primary btn-lg btn-block" data-i18n="details.buttons.view_police_rank"></a>
-					<a href="help.html" class="btn btn-primary btn-lg btn-block" data-i18n="details.buttons.help"></a>
+					<a href="questions" class="btn btn-primary btn-lg btn-block" data-i18n="details.buttons.submitcomplain"></a>
+					<a href="stats" class="btn btn-primary btn-lg btn-block" data-i18n="details.buttons.view_police_rank"></a>
+					<a href="help" class="btn btn-primary btn-lg btn-block" data-i18n="details.buttons.help"></a>
             
 					</div>
 

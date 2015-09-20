@@ -9,4 +9,11 @@ class Main extends CI_Controller {
         $this->load->helper('url');
         $this->load->view('home');
     }
+
+    function questions() {
+        $this->load->view('questions');
+    }
+
+
+
 }
