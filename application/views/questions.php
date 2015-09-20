@@ -188,7 +188,7 @@
 
                 //intimidate menu
                 if ($(this).attr('id') == "humiliatebtn") {
-                    swapDivs("humiliatedev", "thankyoudev");
+                    swapDivs("humiliatedev", "thankyoudiv");
                     post_data["questions"]["humiliate"]={};
                     post_data["questions"]["humiliate"]["score"] = score;
                     post_data["questions"]["humiliate"]["answer"] = value;
@@ -699,6 +699,27 @@
                 <button id="humiliatebtn" class="btn btn-primary btn-lg btn-block"
                         data-score="10" data-value="No" data-qno="8"
                         data-i18n="details.questions.question8.answers.answer4.option2"></button>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- /row -->
+	
+	<div id="thankyoudiv" style="display: none;" class="row">
+
+        <div class="col-lg-12 text-center v-center">
+
+            <h1>Thank You</h1>
+
+            <p class="lead">You successfully submitted your feedback. Click below to view statistics.</p>
+
+            <br>
+
+            <div class="container-fluid">
+
+                <a href="#" class="btn btn-primary btn-lg btn-block" id="sinhala">View Statistics.</a>
+
             </div>
 
         </div>
