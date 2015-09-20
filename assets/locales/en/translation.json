@@ -8,6 +8,7 @@
       "view_police_rank": "View Police Rank",
       "help": "Help"
     },
+    "thankyou" : "You successfully submitted your feedback. Click below to view statistics.",
     "statistic" :{
         "titles" :{
           "title" : "Statistic",
