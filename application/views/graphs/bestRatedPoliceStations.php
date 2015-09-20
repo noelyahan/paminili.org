@@ -15,8 +15,8 @@
 
         <div class="col-lg-12 text-center v-center">
 
-            <p class="lead">Best rated police stations</p>
-            <br>
+<!--            <p class="lead">Best rated police stations</p>
+            <br>-->
 
             <div style="width: 100%">
                 <canvas id="canvas" height="450" width="600"></canvas>
