@@ -53,6 +53,7 @@
                 $("#" + toshow).show();
             }
             var post_data;
+            var obj;
             $('button').click(function () {
                 var value = $(this).attr('data-value');
                 var score = $(this).attr('data-score');
@@ -60,6 +61,10 @@
                 if( post_data == null){
                     post_data={};
                 }
+                if( obj == null){
+                    obj=new Object();
+                }
+
 
                 //when police is selected and next clicked
                 if ($(this).attr('id') == "policeSelectedNextBtn") {
@@ -67,6 +72,7 @@
                     post_data["province"] = $("provinceSelect").value
                     post_data["district"] = $("districtSelect").value
                     post_data["policestation"] = $("policeStationSelect").value
+                    obj.police_station_id=1;
                 }
 
                 //when complain type is entered
@@ -76,6 +82,8 @@
                     post_data["questions"]["complaintype"] = {};
                     post_data["questions"]["complaintype"]["answer"] = value;
                     post_data["questions"]["complaintype"]["score"] = 0;
+                    obj.complain_type=value;
+
                 }
 
                 //if the complain is written down
@@ -84,6 +92,7 @@
                     post_data["questions"]["isComplainNoted"] = {};
                     post_data["questions"]["isComplainNoted"]["answer"] = value;
                     post_data["questions"]["isComplainNoted"]["score"] = score;
+                    obj.is_complain_written=value;
                 }
 
                 //if complain is not written
@@ -92,6 +101,7 @@
                     post_data["questions"]["isComplainNoted"] = {};
                     post_data["questions"]["isComplainNoted"]["answer"] = value;
                     post_data["questions"]["isComplainNoted"]["score"] = score;
+                    obj.is_complain_written=value;
                 }
 
 
@@ -101,6 +111,7 @@
                     post_data["questions"]["complainTime"] ={};
                     post_data["questions"]["complainTime"]["answer"] = value;
                     post_data["questions"]["complainTime"]["score"] = score;
+                    obj.complain_record_time=value;
                 }
 
                 //your language?
@@ -109,6 +120,7 @@
                     post_data["questions"]["complainTime"] = {};
                     post_data["questions"]["complainTime"]["score"] = score;
                     post_data["questions"]["complainTime"]["answer"] = value;
+                    obj.is_your_language=value;
                 }
 
                 //your language no menu
@@ -122,6 +134,7 @@
                     post_data["questions"]["isTranslatorAvailable"] ={}
                     post_data["questions"]["isTranslatorAvailable"]["score"] = score;
                     post_data["questions"]["isTranslatorAvailable"]["answer"] = value;
+                    obj.is_your_language+="_"+value;
                 }
 
                 //your language yes menu
@@ -130,6 +143,7 @@
                     post_data["questions"]["isYourLaunguage"] = {};
                     post_data["questions"]["isYourLaunguage"]["score"] = score;
                     post_data["questions"]["isYourLaunguage"]["answer"] = value;
+                    obj.is_your_language+="_"+value;
                 }
 
                 //women child menu
@@ -138,6 +152,7 @@
                     post_data["questions"]["womenchild"] = {};
                     post_data["questions"]["womenchild"]["score"] = score;
                     post_data["questions"]["womenchild"]["answer"] = value;
+                    obj.provide_female_officer=value;
                 }
 
                 //if medical assistant needed
@@ -151,6 +166,7 @@
                     post_data["questions"]["medicalassitance"] = {};
                     post_data["questions"]["medicalassitance"]["score"] = score;
                     post_data["questions"]["medicalassitance"]["answer"] = value;
+                    obj.time_taken_to_medical_service=value;
                 }
 
                 //medical service menu
@@ -159,6 +175,7 @@
                     post_data["questions"]["medicalassitance"] ={};
                     post_data["questions"]["medicalassitance"]["score"] = score;
                     post_data["questions"]["medicalassitance"]["answer"] = value;
+                    obj.time_taken_to_medical_service=value;
                 }
 
                 //efficient menu
@@ -167,6 +184,7 @@
                     post_data["questions"]["efficient"] = {};
                     post_data["questions"]["efficient"]["score"] = score;
                     post_data["questions"]["efficient"]["answer"] = value;
+                    obj.efficient=value;
                 }
 
                 //friendly menu
@@ -175,6 +193,7 @@
                     post_data["questions"]["friendly"]={};
                     post_data["questions"]["friendly"]["score"] = score;
                     post_data["questions"]["friendly"]["answer"] = value;
+                    obj.friendly=value;
                 }
 
                 //intimidate menu
@@ -183,6 +202,7 @@
                     post_data["questions"]["intimidate"]={};
                     post_data["questions"]["intimidate"]["score"] = score;
                     post_data["questions"]["intimidate"]["answer"] = value;
+                    obj.intimidating=value;
 
                 }
 
@@ -192,6 +212,7 @@
                     post_data["questions"]["humiliate"]={};
                     post_data["questions"]["humiliate"]["score"] = score;
                     post_data["questions"]["humiliate"]["answer"] = value;
+                    obj.humiliating=value;
                     var total = 0;
                     $.each(post_data["questions"], function(i, item) {
                         if(parseInt(item.score)>0){
@@ -201,12 +222,15 @@
                     console.log("Your total is  : "+total);
                     console.log(JSON.stringify(post_data))
                     post_data["score"]=total;
+                    obj.score=total;
+                    $.get( "http://localhost/paminili.org/Questioner/add", obj);
                 }
 
             })
 
 
         });
+
 
 
     </script>
