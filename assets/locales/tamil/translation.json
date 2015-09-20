@@ -22,6 +22,12 @@
       "district2" : "புயடடந",
       "district3" : "ஆயவாயசய"
     },
+    "police_stations":{
+      "station1" :  "நுஅடிடைipவைலைய",
+      "station2" : "வுயபெயடடந",
+      "station3" : "டுரரெபயஅறநாநச",
+      "station4" : "முயவரறயயெ"
+    },
     "questions": {
       "question1": "பொலிஸ் நிலையத்தை தெரிவு செய்தல்.",
       "question2": {
