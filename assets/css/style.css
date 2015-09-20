@@ -1,0 +1,21 @@
+@import url(http://fonts.googleapis.com/css?family=Antic+Slab);
+
+html,body {
+    height:100%;
+}
+
+.centeredDiv {
+    margin-right: auto;
+    margin-left: auto;
+    width: 800px;
+}
+
+/* Custom container */
+.container-full {
+    margin: 0 auto;
+    width: 100%;
+    min-height:100%;
+    background-color:#110022;
+    color:#eee;
+    overflow:hidden;
+}
