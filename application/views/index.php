@@ -20,7 +20,7 @@
         }</style>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
-    <title>Bootply snippet - Bootply Bootstrap Preview</title>
+    <title>Paminili.org</title>
     <meta name="generator" content="Bootply">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="">
@@ -43,13 +43,14 @@
             height: 100%;
         }
 
-        h1 {
-            width:100%;
-            height:auto;
-            font-family: 'Antic Slab', serif;
-            font-size: 80px;
-            color: #DDCCEE;
-        }
+            h1
+            {
+                /*width:100em;*/
+                /*height:auto;*/
+                font-family: 'Antic Slab', serif;
+                font-size: 8.5em;
+                color: #DDCCEE;
+            }
 
         .lead {
             color: #DDCCEE;
@@ -147,7 +148,6 @@
     <script type="text/javascript">
 
         $(document).ready(function () {
-
 
         });
 
