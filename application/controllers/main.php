@@ -14,6 +14,10 @@ class Main extends CI_Controller {
         $this->load->view('questions');
     }
 
+    function statistics() {
+        $this->load->view('statistics');
+    }
+
 
 
 }
