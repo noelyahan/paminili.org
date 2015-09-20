@@ -20,6 +20,43 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('index');
+		$this->loadHighestRapeComplains();
 	}
+
+	function loadBestRatedPoliceStations(){
+		$this->load->view('graphs/bestRatedPoliceStations');
+	}
+
+	function loadHighestChildAbuseComplains(){
+		$this->load->view('graphs/highestChildAbuseComplains');
+	}
+
+	function loadHighestDomesticViolenceComplains(){
+		$this->load->view('graphs/highestDomesticViolenceComplains');
+	}
+
+	function loadHighestOtherComplains(){
+		$this->load->view('graphs/highestOtherComplains');
+	}
+
+	function loadHighestRapeComplains(){
+		$this->load->view('graphs/highestRapeComplains');
+	}
+
+	function loadHighestTheftComplains(){
+		$this->load->view('graphs/highestTheftComplains');
+	}
+
+	function loadHighestTrafficOffenceComplains(){
+		$this->load->view('graphs/highestTrafficOffencesComplains');
+	}
+
+	function loadProblemTypesGraph(){
+		$this->load->view('graphs/problemTypeCount');
+	}
+
+	function loadWorstRatedPoliceStations(){
+		$this->load->view('graphs/worstRatedPoliceStations');
+	}
+
 }
