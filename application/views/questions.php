@@ -758,8 +758,11 @@
             <br>
 
             <div class="container-fluid">
+                <a class="btn btn-primary btn-lg btn-block" id="sinhala" href="http://localhost/paminili.org/main/statistics">
+                    View Statistics
+                    </a>
 
-                <a href="#" class="btn btn-primary btn-lg btn-block" id="sinhala">View Statistics.</a>
+
 
             </div>
 
