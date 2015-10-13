@@ -55,7 +55,7 @@
 
 <head>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="<?php echo base_url();?>/assets/js/jquery.min.js"></script>
     <script>
         $(function () {
             $("#thankyoudiv").hide();
@@ -274,14 +274,14 @@
     <meta name="generator" content="Bootply">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="Bootstrap  example snippet for Bootstrap.">
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>/assets/css/bootstrap.min.css" rel="stylesheet">
 
     <!--[if lt IE 9]>
     <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <link rel="apple-touch-icon" href="/bootstrap/img/apple-touch-icon.png">
+<!--    <link rel="apple-touch-icon" href="/bootstrap/img/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="72x72" href="/bootstrap/img/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/bootstrap/img/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/bootstrap/img/apple-touch-icon-114x114.png">-->
     <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 
     <!-- CSS code from Bootply.com editor -->
@@ -773,14 +773,14 @@
 <!-- /container full -->
 
 
-<script async="" src="//www.google-analytics.com/analytics.js"></script>
-<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<!--<script async="" src="//www.google-analytics.com/analytics.js"></script>-->
+<script type="text/javascript" src="<?php echo base_url();?>/assets/js/jquery.min.js"></script>
 
 
-<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>/assets/js/bootstrap.min.js"></script>
 
 
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>/assets/js/angular.min.js"></script>
 
 
 <!-- JavaScript jQuery code from Bootply.com editor  -->
@@ -788,7 +788,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
 
-<script>
+<!--<script>
     (function (i, s, o, g, r, a, m) {
         i['GoogleAnalyticsObject'] = r;
         i[r] = i[r] || function () {
@@ -802,15 +802,15 @@
     })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
     ga('create', 'UA-40413119-1', 'bootply.com');
     ga('send', 'pageview');
-</script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/i18next/1.9.0/i18next.js"></script>
+</script>-->
+<script type="text/javascript" src="<?php echo base_url();?>/assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>/assets/js/i18next.js"></script>
 
     <script type="text/javascript">
         var lang = localStorage.getItem('lan');
         var options = {
             lng: lang,
-            resGetPath: "http://localhost/paminili.org/assets/locales/" + lang + "/translation.json"
+            resGetPath: "<?php echo base_url();?>/assets/locales/" + lang + "/translation.json"
         };
         i18n.init(options, function (t) {
             console.log(t);

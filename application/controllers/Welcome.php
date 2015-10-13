@@ -22,6 +22,10 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('index.php');
 	}
+        
+        public function test() {
+            echo "Hello test";
+        }
 
 	function loadBestRatedPoliceStations(){
 		$this->load->view('graphs/bestRatedPoliceStations');

@@ -2,9 +2,9 @@
 <html>
 <head>
     <title>Bar Chart</title>
-    <script src="http://localhost/paminili.org/assets/js/Chart.js"></script>
-    <link rel="stylesheet" type="text/css" href="http://localhost/paminili.org/assets/css/style.css">
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="<?php echo base_url() ?>/assets/js/Chart.js"></script>
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>/assets/css/style.css">
+    <link href="<?php echo base_url() ?>/assets/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -24,7 +24,7 @@
 
             <script>
                 window.onload = function () {
-                    var Url = "http://localhost/paminili.org/index.php/Statistics/getAverageScoreVsPoliceStationData";
+                    var Url = "<?php echo base_url() ?>/Statistics/getAverageScoreVsPoliceStationData";
 
                     xmlHttp = new XMLHttpRequest();
                     xmlHttp.onreadystatechange = ProcessRequest;
