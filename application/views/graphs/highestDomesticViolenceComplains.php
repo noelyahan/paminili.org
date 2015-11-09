@@ -18,13 +18,13 @@
             <p class="lead">Police stations with highest domestic violence complains</p>
             <br>
 
-            <div style="width: 100%">
-                <canvas id="canvas" height="450" width="600"></canvas>
+            <div style="width: 80%">
+                <canvas id="canvas" height="100" width="200"></canvas>
             </div>
 
             <script>
                 window.onload = function () {
-                    var Url = "http://localhost/paminili.org/index.php/Statistics/getHighestSexualHarasmentComplaintCountByPoliceStation";
+                    var Url = "<?php echo base_url() ?>/Statistics/getHighestSexualHarasmentComplaintCountByPoliceStation";
 
                     xmlHttp = new XMLHttpRequest();
                     xmlHttp.onreadystatechange = ProcessRequest;

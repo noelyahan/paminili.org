@@ -18,13 +18,13 @@
             <p class="lead">Police stations with highest traffic offences complains</p>
             <br>
 
-            <div style="width: 100%">
-                <canvas id="canvas" height="450" width="600"></canvas>
+            <div style="width: 80%">
+                <canvas id="canvas" height="100" width="200"></canvas>
             </div>
 
             <script>
                 window.onload = function () {
-                    var Url = "http://localhost/paminili.org/index.php/Statistics/getHighestTrafficOffencesComplaintCountByPoliceStation";
+                    var Url = "<?php echo base_url() ?>/Statistics/getHighestTrafficOffencesComplaintCountByPoliceStation";
 
                     xmlHttp = new XMLHttpRequest();
                     xmlHttp.onreadystatechange = ProcessRequest;

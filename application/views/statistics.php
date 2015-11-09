@@ -25,24 +25,6 @@
                     post_data["province"] = $("provinceSelect").value
                     post_data["district"] = $("districtSelect").value
                     post_data["policestation"] = $("policeStationSelect").value
-                } else if ($(this).attr('id') == "highestRatedBtn") {
-                    window.open("<?php echo base_url();?>/main/loadBestRatedPoliceStations");
-                } else if ($(this).attr('id') == "rapeBtn") {
-                    window.open("<?php echo base_url();?>/main/loadHighestRapeComplains");
-                } else if ($(this).attr('id') == "childBtn") {
-                    window.open("<?php echo base_url();?>/main/loadHighestChildAbuseComplains");
-                } else if ($(this).attr('id') == "domesticBtn") {
-                    window.open("<?php echo base_url();?>/main/loadHighestDomesticViolenceComplains");
-                } else if ($(this).attr('id') == "sexualBtn") {
-                    window.open("<?php echo base_url();?>/main/loadProblemTypesGraph");
-                } else if ($(this).attr('id') == "trafficBtn") {
-                    window.open("<?php echo base_url();?>/main/loadHighestTrafficOffenceComplains");
-                } else if ($(this).attr('id') == "theftBtn") {
-                    window.open("<?php echo base_url();?>/main/loadHighestTheftComplains");
-                } else if ($(this).attr('id') == "otherBtn") {
-                    window.open("<?php echo base_url();?>/main/loadHighestOtherComplains");
-                } else if ($(this).attr('id') == "worstRatedBtn") {
-                    window.open("<?php echo base_url();?>/main/loadWorstRatedPoliceStations");
                 }
             });
         });
@@ -139,33 +121,33 @@
             <br>
 
             <div class="container-fluid">
-                <button id="highestRatedBtn" class="btn btn-primary btn-lg btn-block"
-                        data-i18n="details.statistic.titles.bestrate"></button>
+                <a id="highestRatedBtn" href="<?php echo base_url();?>/main/loadBestRatedPoliceStations" class="btn btn-primary btn-lg btn-block"
+                        data-i18n="details.statistic.titles.bestrate"></a>
                 <br>
-                <button id="worstRatedBtn" class="btn btn-primary btn-lg btn-block"
-                        data-i18n="details.statistic.titles.worst"></button>
+                <a id="worstRatedBtn" href="<?php echo base_url();?>/main/loadWorstRatedPoliceStations" class="btn btn-primary btn-lg btn-block"
+                        data-i18n="details.statistic.titles.worst"></a>
                 <br>
-                <button id="sexualBtn" class="btn btn-primary btn-lg btn-block"
+                <a id="sexualBtn" href="<?php echo base_url();?>/main/loadProblemTypesGraph" class="btn btn-primary btn-lg btn-block"
                         data-i18n="details.statistic.titles.sexual"
-                    ></button>
+                    ></a>
                 <br>
-                <button id="rapeBtn" class="btn btn-primary btn-lg btn-block"
-                        data-i18n="details.statistic.titles.rape"></button>
+                <a id="rapeBtn" href="<?php echo base_url();?>/main/loadHighestRapeComplains" class="btn btn-primary btn-lg btn-block"
+                        data-i18n="details.statistic.titles.rape"></a>
                 <br>
-                <button id="childBtn" class="btn btn-primary btn-lg btn-block"
-                        data-i18n="details.statistic.titles.child"></button>
+                <a id="childBtn" href="<?php echo base_url();?>/main/loadHighestChildAbuseComplains" class="btn btn-primary btn-lg btn-block"
+                        data-i18n="details.statistic.titles.child"></a>
                 <br>
-                <button id="domesticBtn" class="btn btn-primary btn-lg btn-block"
-                        data-i18n="details.statistic.titles.domestic"></button>
+                <a id="domesticBtn" href="<?php echo base_url();?>/main/loadHighestDomesticViolenceComplains" class="btn btn-primary btn-lg btn-block"
+                        data-i18n="details.statistic.titles.domestic"></a>
                 <br>
-                <button id="trafficBtn" class="btn btn-primary btn-lg btn-block"
-                        data-i18n="details.statistic.titles.traffic"></button>
+                <a id="trafficBtn" href="<?php echo base_url();?>/main/loadHighestTrafficOffenceComplains" class="btn btn-primary btn-lg btn-block"
+                        data-i18n="details.statistic.titles.traffic"></a>
                 <br>
-                <button id="theftBtn" class="btn btn-primary btn-lg btn-block"
-                        data-i18n="details.statistic.titles.theft"></button>
+                <a id="theftBtn" href="<?php echo base_url();?>/main/loadHighestTheftComplains" class="btn btn-primary btn-lg btn-block"
+                        data-i18n="details.statistic.titles.theft"></a>
                 <br>
-                <button id="otherBtn" class="btn btn-primary btn-lg btn-block"
-                        data-i18n="details.statistic.titles.other"></button>
+                <a id="otherBtn" href="<?php echo base_url();?>/main/loadHighestOtherComplains" class="btn btn-primary btn-lg btn-block"
+                        data-i18n="details.statistic.titles.other"></a>
                 <br>
             </div>
 

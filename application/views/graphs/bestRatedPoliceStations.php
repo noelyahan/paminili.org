@@ -18,8 +18,8 @@
 <!--            <p class="lead">Best rated police stations</p>
             <br>-->
 
-            <div style="width: 100%">
-                <canvas id="canvas" height="450" width="600"></canvas>
+            <div style="width: 90%">
+                <canvas id="canvas" height="100" width="200"></canvas>
             </div>
 
             <script>
