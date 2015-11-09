@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 09, 2015 at 05:04 PM
+-- Generation Time: Nov 09, 2015 at 07:05 PM
 -- Server version: 5.6.12-log
 -- PHP Version: 5.4.12
 
@@ -301,15 +301,15 @@ INSERT INTO `user_role_permission_category` (`id`, `user_role`, `permission_cate
 CREATE TABLE IF NOT EXISTS `vote` (
   `vote_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `post__id` int(11) DEFAULT NULL,
+  `post_id` int(11) DEFAULT NULL,
   `comment_id` int(10) unsigned DEFAULT NULL,
   `reply_id` int(11) DEFAULT NULL,
   `vote` text,
   PRIMARY KEY (`vote_id`),
   KEY `FK__user_vote` (`user_id`),
-  KEY `FK__post_vote` (`post__id`),
   KEY `FK_vote_comment` (`comment_id`),
-  KEY `FK_vote_reply_comment` (`reply_id`)
+  KEY `FK_vote_reply_comment` (`reply_id`),
+  KEY `FK__post_vote` (`post_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -359,9 +359,9 @@ ALTER TABLE `user_role_permission_category`
 -- Constraints for table `vote`
 --
 ALTER TABLE `vote`
-  ADD CONSTRAINT `FK_vote_reply_comment` FOREIGN KEY (`reply_id`) REFERENCES `reply_comment` (`reply_id`),
+  ADD CONSTRAINT `FK__post_vote` FOREIGN KEY (`post_id`) REFERENCES `post` (`post_id`),
   ADD CONSTRAINT `FK_vote_comment` FOREIGN KEY (`comment_id`) REFERENCES `comment` (`comment_id`),
-  ADD CONSTRAINT `FK__post_vote` FOREIGN KEY (`post__id`) REFERENCES `post` (`post_id`),
+  ADD CONSTRAINT `FK_vote_reply_comment` FOREIGN KEY (`reply_id`) REFERENCES `reply_comment` (`reply_id`),
   ADD CONSTRAINT `FK__user_vote` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
