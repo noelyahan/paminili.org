@@ -140,14 +140,6 @@
                 }
             },
             "question10": {
-                "value": "Was there an officer from the Police Women’s and Children’s Bureau present to attend to your complaint?",
-                "answers": {
-                    "answer1": "Yes",
-                    "answer2": "No",
-                    "answer3": "Yes, but she did not attend to me."
-                }
-            },
-            "question11": {
                 "value": "Did a Police officer visit the crime scene immediately / within an hour of your complaint?",
                 "answers": {
                     "answer1": "Yes",
