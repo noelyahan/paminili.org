@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CodeIgniter
  *
@@ -51,46 +52,87 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  */
 class CI_Controller {
 
-	/**
-	 * Reference to the CI singleton
-	 *
-	 * @var	object
-	 */
-	private static $instance;
+    /**
+     * Reference to the CI singleton
+     *
+     * @var	object
+     */
+    private static $instance;
 
-	/**
-	 * Class constructor
-	 *
-	 * @return	void
-	 */
-	public function __construct()
-	{
-		self::$instance =& $this;
+    /**
+     * Class constructor
+     *
+     * @return	void
+     */
+    public function __construct() {
+        self::$instance = & $this;
 
-		// Assign all the class objects that were instantiated by the
-		// bootstrap file (CodeIgniter.php) to local class variables
-		// so that CI can run as one big super object.
-		foreach (is_loaded() as $var => $class)
-		{
-			$this->$var =& load_class($class);
-		}
+        // Assign all the class objects that were instantiated by the
+        // bootstrap file (CodeIgniter.php) to local class variables
+        // so that CI can run as one big super object.
+        foreach (is_loaded() as $var => $class) {
+            $this->$var = & load_class($class);
+        }
 
-		$this->load =& load_class('Loader', 'core');
-		$this->load->initialize();
-		log_message('info', 'Controller Class Initialized');
-	}
+        $this->load = & load_class('Loader', 'core');
+        $this->load->initialize();
+        log_message('info', 'Controller Class Initialized');
+    }
 
-	// --------------------------------------------------------------------
+    // --------------------------------------------------------------------
 
-	/**
-	 * Get the CI singleton
-	 *
-	 * @static
-	 * @return	object
-	 */
-	public static function &get_instance()
-	{
-		return self::$instance;
-	}
+    /**
+     * Get the CI singleton
+     *
+     * @static
+     * @return	object
+     */
+    public static function &get_instance() {
+        return self::$instance;
+    }
+
+    
+    
+    public function controlUserViews($view) {
+
+        if ($this->isAuthenticated()) {
+            if ($this->isPermitted()) {
+                $this->load->view($view);
+            } else {
+                $this->load->view('permissionError');
+            }
+        } else {
+            $this->load->view('login');
+        }
+    }
+    public function controlUserRequests() {
+
+        if ($this->isAuthenticated()) {
+            if ($this->isPermitted()) {
+                return true;
+            } else {
+                $this->load->view('permissionError');
+            }
+        } else {
+            $this->load->view('login');
+        }
+    }
+
+    private function isAuthenticated() {
+        $this->load->library('session');
+        $userid = $this->session->userdata('userId');
+        if (isset($userid) && $userid != '' && $userid > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    private function isPermitted() {
+        $uri = current_url();
+        if (in_array(strtolower($uri), $this->session->userdata('permissions'))) {
+            return true;
+        }
+        return false;
+    }
 
 }

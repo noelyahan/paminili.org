@@ -82,6 +82,7 @@
 <!-- HTML code from Bootply.com editor -->
 
 <body>
+    <a href="<?php echo base_url();?>login/logout">LOGOUT</a>
 
 <div class="container-full">
 
@@ -138,10 +139,10 @@
     <script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery.min.js"></script>
 
 
-    <script type="text/javascript" src="<?php echo base_url();?>/assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
 
 
-    <script type="text/javascript" src="<?php echo base_url();?>/assets/js/angular.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url();?>assets/js/angular.min.js"></script>
 
     <!-- JavaScript jQuery code from Bootply.com editor  -->
 
