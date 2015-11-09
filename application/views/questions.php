@@ -592,16 +592,16 @@
             <!--Did a Police officer visit the crime scene immediately / within an hour of your complaint?-->
             <div id="question13" style="display: none;" class="row">
                 <div class="col-lg-12 text-center v-center">
-                    <p class="lead" data-i18n="details.questions.question11.value"></p>
+                    <p class="lead" data-i18n="details.questions.question10.value"></p>
                     <br>
                     <div class="container-fluid">
                         <button id="question13btn" class="btn btn-primary btn-lg btn-block"
                                 data-score="10" data-value="Not applicable" data-qno="7"
-                                data-i18n="details.questions.question11.answers.answer1"></button>
+                                data-i18n="details.questions.question10.answers.answer1"></button>
                         <br>
                         <button id="question13btn" class="btn btn-primary btn-lg btn-block"
                                 data-score="0" data-value="Yes" data-qno="7"
-                                data-i18n="details.questions.question11.answers.answer2"></button>
+                                data-i18n="details.questions.question10.answers.answer2"></button>
                     </div>
                 </div>
             </div>
