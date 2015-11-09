@@ -39,7 +39,7 @@ Login.authenticateUser = function() {
 
 }
 Login.onSuccess = function(data) {
-    alert('success'+data);
+    window.location.replace(Login.baseURL+'');
 }
 Login.onError = function(data) {
     alert('fail'+data);

@@ -3,64 +3,57 @@
 class Main extends CI_Controller {
 
     public function index() {
-        if ($this->isAuthenticated()) {
-            $this->load->view('index');
-        } else {
-            $this->load->view('login');
-        }
+        $this->controlUserViews('index');
     }
 
     function home() {
-        $this->load->helper('url');
-        $this->load->view('home');
+        $this->controlUserViews('home');
     }
 
     function questions() {
-        $this->load->view('questions');
+        $this->controlUserViews('questions');
     }
 
     function statistics() {
-        $this->load->view('statistics');
+        $this->controlUserViews('statistics');
     }
 
-    public function loadBestRatedPoliceStations() {
-        $this->load->view('graphs/bestRatedPoliceStations');
+    function loadBestRatedPoliceStations() {
+        $this->controlUserViews('graphs/bestRatedPoliceStations');
     }
 
     public function loadHighestChildAbuseComplains() {
-        $this->load->view('graphs/highestChildAbuseComplains');
+        $this->controlUserViews('graphs/highestChildAbuseComplains');
     }
 
     public function loadHighestDomesticViolenceComplains() {
-        $this->load->view('graphs/highestDomesticViolenceComplains');
+        $this->controlUserViews('graphs/highestDomesticViolenceComplains');
     }
 
     public function loadHighestOtherComplains() {
-        $this->load->view('graphs/highestOtherComplains');
+        $this->controlUserViews('graphs/highestOtherComplains');
     }
 
     public function loadHighestRapeComplains() {
-        $this->load->view('graphs/highestRapeComplains');
+        $this->controlUserViews('graphs/highestRapeComplains');
     }
 
     public function loadHighestTheftComplains() {
-        $this->load->view('graphs/highestTheftComplains');
+        $this->controlUserViews('graphs/highestTheftComplains');
     }
 
     public function loadHighestTrafficOffenceComplains() {
-        $this->load->view('graphs/highestTrafficOffencesComplains');
+        $this->controlUserViews('graphs/highestTrafficOffencesComplains');
     }
 
     public function loadProblemTypesGraph() {
-        $this->load->view('graphs/problemTypeCount');
+        $this->controlUserViews('graphs/problemTypeCount');
     }
 
     public function loadWorstRatedPoliceStations() {
-        $this->load->view('graphs/worstRatedPoliceStations');
+        $this->controlUserViews('graphs/worstRatedPoliceStations');
     }
 
-    private function isAuthenticated() {
-        return false;
-    }
+   
 
 }
