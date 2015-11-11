@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 09, 2015 at 07:05 PM
+-- Generation Time: Nov 11, 2015 at 11:40 AM
 -- Server version: 5.6.12-log
 -- PHP Version: 5.4.12
 
@@ -31,15 +31,23 @@ USE `paminili`;
 CREATE TABLE IF NOT EXISTS `comment` (
   `comment_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `description` text NOT NULL,
-  `vote_up` int(11) NOT NULL,
-  `vote_down` int(11) NOT NULL,
+  `vote_up` int(11) NOT NULL DEFAULT '0',
+  `vote_down` int(11) NOT NULL DEFAULT '0',
   `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `post_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   PRIMARY KEY (`comment_id`),
   KEY `post_id` (`post_id`),
   KEY `user_idFK1` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `comment`
+--
+
+INSERT INTO `comment` (`comment_id`, `description`, `vote_up`, `vote_down`, `timestamp`, `post_id`, `user_id`) VALUES
+(2, 'I am a test version', 0, 0, '2015-11-09 20:32:25', 3, 2),
+(3, 'I am a test version', 0, 0, '2015-11-09 20:41:32', 3, 2);
 
 -- --------------------------------------------------------
 
@@ -150,13 +158,20 @@ INSERT INTO `police_station` (`id`, `name`, `province`, `district`) VALUES
 CREATE TABLE IF NOT EXISTS `post` (
   `post_id` int(11) NOT NULL AUTO_INCREMENT,
   `post` text NOT NULL,
-  `vote_up` int(11) NOT NULL,
-  `vote_down` int(11) NOT NULL,
+  `vote_up` int(11) DEFAULT '0',
+  `vote_down` int(11) DEFAULT '0',
   `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `user_id` int(11) NOT NULL,
   PRIMARY KEY (`post_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `post`
+--
+
+INSERT INTO `post` (`post_id`, `post`, `vote_up`, `vote_down`, `timestamp`, `user_id`) VALUES
+(3, 'This is my test post', 1, 0, '2015-11-11 11:33:43', 2);
 
 -- --------------------------------------------------------
 
@@ -179,7 +194,7 @@ CREATE TABLE IF NOT EXISTS `question` (
   `humiliating` varchar(100) DEFAULT NULL,
   `score` double DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=20 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `question`
@@ -204,12 +219,22 @@ CREATE TABLE IF NOT EXISTS `reply_comment` (
   `reply_id` int(11) NOT NULL AUTO_INCREMENT,
   `description` text NOT NULL,
   `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `vote_up` int(11) NOT NULL DEFAULT '0',
+  `vote_down` int(11) NOT NULL DEFAULT '0',
   `user_id` int(11) NOT NULL,
   `comment_id` int(10) unsigned NOT NULL,
   PRIMARY KEY (`reply_id`),
   KEY `FK__user` (`user_id`),
   KEY `FK_reply_comment_comment` (`comment_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `reply_comment`
+--
+
+INSERT INTO `reply_comment` (`reply_id`, `description`, `timestamp`, `vote_up`, `vote_down`, `user_id`, `comment_id`) VALUES
+(1, 'This is my test reply comment', '2015-11-09 20:53:19', 0, 0, 2, 2),
+(2, 'This is my test reply comment', '2015-11-09 15:39:29', 0, 0, 2, 2);
 
 -- --------------------------------------------------------
 
@@ -299,7 +324,7 @@ INSERT INTO `user_role_permission_category` (`id`, `user_role`, `permission_cate
 --
 
 CREATE TABLE IF NOT EXISTS `vote` (
-  `vote_id` int(11) NOT NULL,
+  `vote_id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
   `post_id` int(11) DEFAULT NULL,
   `comment_id` int(10) unsigned DEFAULT NULL,
@@ -310,7 +335,14 @@ CREATE TABLE IF NOT EXISTS `vote` (
   KEY `FK_vote_comment` (`comment_id`),
   KEY `FK_vote_reply_comment` (`reply_id`),
   KEY `FK__post_vote` (`post_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `vote`
+--
+
+INSERT INTO `vote` (`vote_id`, `user_id`, `post_id`, `comment_id`, `reply_id`, `vote`) VALUES
+(1, 2, 3, NULL, NULL, '1');
 
 --
 -- Constraints for dumped tables
@@ -359,9 +391,9 @@ ALTER TABLE `user_role_permission_category`
 -- Constraints for table `vote`
 --
 ALTER TABLE `vote`
-  ADD CONSTRAINT `FK__post_vote` FOREIGN KEY (`post_id`) REFERENCES `post` (`post_id`),
   ADD CONSTRAINT `FK_vote_comment` FOREIGN KEY (`comment_id`) REFERENCES `comment` (`comment_id`),
   ADD CONSTRAINT `FK_vote_reply_comment` FOREIGN KEY (`reply_id`) REFERENCES `reply_comment` (`reply_id`),
+  ADD CONSTRAINT `FK__post_vote` FOREIGN KEY (`post_id`) REFERENCES `post` (`post_id`),
   ADD CONSTRAINT `FK__user_vote` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
