@@ -2,6 +2,7 @@
 
 class Statistics extends My_Controller {
     function index() {
+        $this->load->view('statistics');
       
     }
     public function getAverageScoreVsPoliceStationData() {

@@ -3,8 +3,8 @@
 class Questioner extends My_Controller {
     function index() {
         $data = $this->input->post('name');
-        echo 'Welcome ' . $data;
-        
+        //echo 'Welcome ' . $data;
+        $data = $this->load->view('index.php');
     }
     public function add() {
         $this->load->model('Questioner_m');

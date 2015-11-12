@@ -3,6 +3,10 @@
 
 class Post extends My_Controller {
     
+    public function index() {
+        $this->get_all_posts();
+    }
+    
     // if limit == 0 get all posts
     function get_all_posts() {
 //        $limit
@@ -41,6 +45,7 @@ class Post extends My_Controller {
 //       }
        $data["all_posts"] = $all_post;
        $data["user_name"] = "Sachith Ushan";
+       
        $this->load->view('post_test',$data);
     }
 }
