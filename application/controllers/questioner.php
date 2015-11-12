@@ -1,6 +1,6 @@
 <?php
 
-class Questioner extends CI_Controller {
+class Questioner extends My_Controller {
     function index() {
         $data = $this->input->post('name');
         echo 'Welcome ' . $data;

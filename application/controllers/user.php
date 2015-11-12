@@ -1,7 +1,7 @@
 <?php
 
 
-class User extends CI_Controller {
+class User extends My_Controller {
     
     
     function add_post() {

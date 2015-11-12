@@ -3,7 +3,7 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class PoliceStation extends CI_Controller {
+class PoliceStation extends My_Controller {
 
     /**
      * Index page for Magazine controller.

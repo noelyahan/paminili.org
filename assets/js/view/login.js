@@ -7,14 +7,23 @@ var login = new Login();
 Login.init = function() {
     Login.baseURL = "";
     Login.bindEvents();
+    Login.initElements();
 
+}
+Login.initElements = function() {
+    $("#errorLoginText").hide();
 
 }
 Login.bindEvents = function() {
     $("#loginBtn").unbind('click');
     $("#loginBtn").click(Login.authenticateUser);
-}
+    $("#passwordText").focus(Login.textFocus);
+    $("#userNameText").focus(Login.textFocus);
 
+}
+Login.textFocus=function(){
+    $("#errorLoginText").hide();
+}
 
 Login.authenticateUser = function() {
 
@@ -39,8 +48,8 @@ Login.authenticateUser = function() {
 
 }
 Login.onSuccess = function(data) {
-    window.location.replace(Login.baseURL+'');
+    window.location.replace(Login.baseURL + '');
 }
 Login.onError = function(data) {
-    alert('fail'+data);
+    $("#errorLoginText").show();
 }

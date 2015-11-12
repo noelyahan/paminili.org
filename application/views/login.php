@@ -27,18 +27,19 @@
                         <h1 class="text-center">Login</h1>
                     </div>
                     <div class="modal-body">
-                        <form class="form col-md-12 center-block">
+                        <div class="form col-md-12 center-block">
                             <div class="form-group">
                                 <input type="text" class="form-control input-lg" placeholder="User Name" name="userNameText" id="userNameText"/>
                             </div>
                             <div class="form-group">
                                 <input type="password" name="passwordText" id="passwordText" class="form-control input-lg" placeholder="Password"/>
+                                <span class="pull-right " name="errorLoginText" id="errorLoginText" ><a href="#">Invalid User Name or Password</a></span>
                             </div>
                             <div class="form-group">
                                 <button name="loginBtn" id="loginBtn" class="btn btn-primary btn-lg btn-block">Sign In</button>
                                 <span class="pull-right"><a href="#">Register</a></span><span><a href="#">Need help?</a></span>
                             </div>
-                        </form>
+                        </div>
                     </div>
                     <div class="modal-footer">
                     </div>

@@ -1,7 +1,7 @@
 <?php
 
 
-class Post extends CI_Controller {
+class Post extends My_Controller {
     
     // if limit == 0 get all posts
     function get_all_posts() {
