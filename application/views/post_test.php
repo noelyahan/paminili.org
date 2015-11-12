@@ -83,9 +83,9 @@
                         <img src="<?php echo base_url(); ?>assets/img/update_status_icon.png"/>
                         Update Status
                     </h3>
-                    <textArea class="form-control"></textArea></br>
+                    <textArea id="post_txt" class="form-control"></textArea></br>
                     <div class="text-right">
-                        <input class="btn btn-primary" type="button" value="Post"/>
+                        <input id="post_btn" class="btn btn-primary" type="button" value="Post"/>
                     </div>
                 </div>
             </div>
@@ -187,10 +187,10 @@
 
                                         <div class="col-md-12 font-black">
                                             <div class="input-group">
-                                                <input type="text" class="form-control"
+                                                <input id="reply-txt<?php echo $comments[$j]["comment_id"];?>" type="text" class="form-control"
                                                        placeholder="Write a reply...">
                                                             <span class="input-group-btn">
-                                                                <img class="btn btn-default"
+                                                                <img id="<?php echo $comments[$j]["comment_id"];?>" class="btn btn-default reply-btn"
                                                                      src="<?php echo base_url(); ?>assets/img/enter_icon.png"/>Go
                                                             </span>
                                             </div>
@@ -210,12 +210,12 @@
 
                                     <div class="col-md-12 font-black">
                                         <div class="input-group">
-                                            <input type="text" class="form-control"
+                                            <input id="comment-txt<?php echo $all_posts[$i]["post_id"];?>" type="text" class="form-control"
                                                    placeholder="Write a comment...">
 
 
                   <span class="input-group-btn">
-                      <img class="btn btn-default" src="<?php echo base_url(); ?>assets/img/enter_icon.png"/>Go
+                      <img id="<?php echo $all_posts[$i]["post_id"];?>" class="btn btn-default comment-btn" src="<?php echo base_url(); ?>assets/img/enter_icon.png"/>Go
                   </span>
                                         </div>
                                     </div>
@@ -252,10 +252,71 @@
 <script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
 <!-- Metis Menu Js -->
 <script src="<?php echo base_url(); ?>assets/js/jquery.metisMenu.js"></script>
-<!-- Morris Chart Js -->
-<!--        <script src="<?php echo base_url(); ?>assets/js/morris/raphael-2.1.0.min.js"></script>-->
-<!--        <script src="<?php echo base_url(); ?>assets/js/morris/morris.js"></script>
-         Custom Js
-        <script src="<?php echo base_url(); ?>assets/js/custom-scripts.js"></script>-->
+
+<script>
+    $(function() {
+        var post_txt_element = $("#post_txt");
+        
+        // add post
+        $("#post_btn").click(function() {
+            var post_txt = post_txt_element.val();
+            $.post("<?php echo base_url(); ?>user/post/add", {post: post_txt}, function (data) {
+                //var p = JSON.parse(data);
+                // this is a temp solution
+                // need to add proper append method
+                if(data == 'error') {
+                    alert("please log in first!");
+                }else {
+                    location.reload();
+                }
+                
+            });
+        });
+        
+        
+        // add comment
+        $('.comment-btn').click(function() {
+            var comment_btn = $(this);
+            var post_id = comment_btn.attr('id');
+            var comment = $('#comment-txt'+post_id).val();
+            console.log(comment);
+            
+            $.post("<?php echo base_url(); ?>user/comment/add", {post_id: post_id, comment: comment}, 
+            function (data) {
+                //var p = JSON.parse(data);
+                // this is a temp solution
+                // need to add proper append method
+                if(data == 'error') {
+                    alert("please log in first!");
+                }else {
+                    location.reload();
+                }
+                
+            });
+        });
+        
+        // add reply
+        $('.reply-btn').click(function() {
+            var comment_btn = $(this);
+            var comment_id = comment_btn.attr('id');
+            var reply = $('#reply-txt'+comment_id).val();
+            console.log(reply, comment_id);
+            
+            $.post("<?php echo base_url(); ?>user/reply/add", {comment_id: comment_id, reply: reply}, 
+            function (data) {
+                //var p = JSON.parse(data);
+                // this is a temp solution
+                // need to add proper append method
+                if(data == 'error') {
+                    alert("please log in first!");
+                }else {
+                    location.reload();
+                }
+                
+            });
+        });
+    });
+
+</script>
 </body>
 </html>
