@@ -21,4 +21,9 @@ class Reply_m extends MY_Model {
         $this->timestamp = date('Y-m-d H:i:s');
         $this->save();
     }
+    
+    function  get_reply($comment_id){
+        $query = $this->db->get_where('reply_comment', array('comment_id' => $comment_id),0, 0);
+        return $query->result_array();
+    }
 }

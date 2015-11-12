@@ -54,6 +54,9 @@ class Main extends CI_Controller {
         $this->controlUserViews('graphs/worstRatedPoliceStations');
     }
 
+    public function post_test() {
+        $this->load->view('post_test');
+    }
    
 
 }

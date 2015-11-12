@@ -41,10 +41,9 @@ class User extends CI_Controller {
      * of particular table type (post, comment, reply)
      */
     function add_vote() {
-//      $table_type => (comment, post, reply)
-//      $id => particular table type id (comment, post, reply)
-        
-//      $user_id, $id, $table_type, $vote_type
+        $this->load->model('vote_m');
+        $vote_m = new Vote_m();
+        $vote_m->add_vote(2,1,3,"post");
     }
     
 }
