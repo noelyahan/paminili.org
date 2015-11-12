@@ -1,6 +1,10 @@
 <?php
 
-class Main extends CI_Controller {
+class Main extends My_Controller {
+
+    function __construct() {
+        parent::__construct();
+    }
 
     public function index() {
         $this->controlUserViews('index');
@@ -57,6 +61,5 @@ class Main extends CI_Controller {
     public function post_test() {
         $this->load->view('post_test');
     }
-   
 
 }

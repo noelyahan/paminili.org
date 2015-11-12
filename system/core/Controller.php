@@ -91,48 +91,5 @@ class CI_Controller {
         return self::$instance;
     }
 
-    
-    
-    public function controlUserViews($view) {
-
-        if ($this->isAuthenticated()) {
-            if ($this->isPermitted()) {
-                $this->load->view($view);
-            } else {
-                $this->load->view('permissionError');
-            }
-        } else {
-            $this->load->view('login');
-        }
-    }
-    public function controlUserRequests() {
-
-        if ($this->isAuthenticated()) {
-            if ($this->isPermitted()) {
-                return true;
-            } else {
-                $this->load->view('permissionError');
-            }
-        } else {
-            $this->load->view('login');
-        }
-    }
-
-    private function isAuthenticated() {
-        $this->load->library('session');
-        $userid = $this->session->userdata('userId');
-        if (isset($userid) && $userid != '' && $userid > 0) {
-            return true;
-        }
-        return false;
-    }
-
-    private function isPermitted() {
-        $uri = current_url();
-        if (in_array(strtolower($uri), $this->session->userdata('permissions'))) {
-            return true;
-        }
-        return false;
-    }
 
 }

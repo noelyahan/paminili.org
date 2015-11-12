@@ -1,6 +1,6 @@
 <?php
 
-class Statistics extends CI_Controller {
+class Statistics extends My_Controller {
     function index() {
       
     }
