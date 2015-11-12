@@ -52,3 +52,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'post';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+// user routes for add post, comments & replys
+$route['user/post/add'] = 'user/add_post';
+$route['user/comment/add'] = 'user/add_comment';
+$route['user/reply/add'] = 'user/add_reply';
+
+// login route
+$route['user/login'] = 'login/logout';
