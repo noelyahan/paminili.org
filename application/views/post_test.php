@@ -144,7 +144,7 @@
                                             <div class="col-md-1">
                                                 Dislike <?php echo $comments[$j]["vote_down"] ?></div>
                                             <div class="col-md-1"><a data-toggle="collapse" data-parent="#accordion"
-                                                                     href="#reply-box" class="">Reply</a></div>
+                                                                     href="#<?php echo $comments[$j]["comment_id"]; ?>" class="">Reply</a></div>
                                         </h6>
                                     </div>
                                 </div>
@@ -174,7 +174,7 @@
                                                     Dislike <?php echo $replies[$k]["vote_down"] ?></div>
                                                 <div class="col-md-1"><a data-toggle="collapse"
                                                                          data-parent="#accordion"
-                                                                         href="#reply-box" class="">Reply</a></div>
+                                                                         href="#<?php echo $comments[$j]["comment_id"]; ?>" class="">Reply</a></div>
                                             </h6>
                                         </div>
                                     </div>
@@ -184,7 +184,7 @@
                                 <?php } ?>
                                 <div class="col-md-2">
                                 </div>
-                                <div id="reply-box" class="col-md-10 panel collapse">
+                                    <div id="<?php echo $comments[$j]["comment_id"]; ?>" class="col-md-10 panel collapse">
                                     <div class="col-md-12">
                                         <div class="col-md-1"><img
                                                 src="<?php echo base_url(); ?>assets/img/comment_user_icon.png"/>
