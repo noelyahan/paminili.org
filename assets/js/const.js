@@ -1,1 +1,0 @@
-var resGetPath = '<?php echo base_url() ?>' + "/assets/locales/"+lang+"/translation.json";

@@ -54,67 +54,17 @@
     <meta name="generator" content="Bootply">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="Bootstrap  example snippet for Bootstrap.">
-    <link href="<?php echo base_url();?>assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/css/bootstrap.css" rel="stylesheet">
 
     <!--[if lt IE 9]>
     <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-<!--    <link rel="apple-touch-icon" href="/bootstrap/img/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/bootstrap/img/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/bootstrap/img/apple-touch-icon-114x114.png">-->
     <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-
-    <!-- CSS code from Bootply.com editor -->
-
-    <style type="text/css">
-        @import url(http://fonts.googleapis.com/css?family=Antic+Slab);
-
-        html, body {
-            height: 100%;
-        }
-
-        h1 {
-            font-family: 'Antic Slab', serif;
-            font-size: 80px;
-            color: #DDCCEE;
-        }
-
-        .lead {
-            color: #DDCCEE;
-        }
-
-        /* Custom container */
-        .container-full {
-            margin: 0 auto;
-            width: 100%;
-            min-height: 100%;
-            background-color: #110022;
-            color: #eee;
-            overflow: hidden;
-        }
-
-        .container-full a {
-            color: #efefef;
-            text-decoration: none;
-        }
-
-        .v-center {
-            margin-top: 7%;
-        }
-
-    </style>
-
-
 </head>
 
-<!-- HTML code from Bootply.com editor -->
-
 <body>
-
 <div class="container-full details">
-
     <div id="q2complaintype" class="row">
-
         <div class="col-lg-12 text-center v-center">
 
             <p class="lead" data-i18n="details.statistic.titles.title"></p>
