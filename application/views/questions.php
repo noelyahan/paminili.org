@@ -1,26 +1,41 @@
-<html>
-    <script type="text/javascript">
-        var loadPoliceDevisions = function (value, lan) {
-            var policeStationSelect = document.getElementById("policeStationSelect");
-            policeStationSelect.options.length = 0;
-            var policeStationsArray = ["Embilipitiya", "Tangalle", "Lunugamwehera", "Katuwana"];
-            if (lan == 'sinhala') {
-                policeStationsArray = ["??????????", "?????? ", "???????????? ", "?????"];
-            } else if (lan == 'tamil') {
-                policeStationsArray = ["???????ip?????", "?????????", "?????????????", "?????????"];
-            }
-            for (var i = 0; i < policeStationsArray.length; i++) {
-                var opt = policeStationsArray[i];
-                var el = document.createElement("option");
-                el.textContent = opt;
-                el.value = opt;
-                policeStationSelect.appendChild(el);
-            }
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<script type="text/javascript">
+    var loadPoliceDevisions = function (value, lan) {
+        var policeStationSelect = document.getElementById("policeStationSelect");
+        policeStationSelect.options.length = 0;
+        var policeStationsArray = ["Embilipitiya", "Tangalle", "Lunugamwehera", "Katuwana"];
+        if (lan == 'sinhala') {
+            policeStationsArray = ["??????????", "?????? ", "???????????? ", "?????"];
+        } else if (lan == 'tamil') {
+            policeStationsArray = ["???????ip?????", "?????????", "?????????????", "?????????"];
         }
-    </script>
-    <head>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script>
+        for (var i = 0; i < policeStationsArray.length; i++) {
+            var opt = policeStationsArray[i];
+            var el = document.createElement("option");
+            el.textContent = opt;
+            el.value = opt;
+            policeStationSelect.appendChild(el);
+        }
+    }
+</script>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Free Bootstrap Admin Template : Dream</title>
+    <!-- Bootstrap Styles-->
+    <link href="assets/css/bootstrap.css" rel="stylesheet"/>
+    <!-- FontAwesome Styles-->
+    <link href="assets/css/font-awesome.css" rel="stylesheet"/>
+    <!-- Morris Chart Styles-->
+    <link href="assets/js/morris/morris-0.4.3.min.css" rel="stylesheet"/>
+    <!-- Custom Styles-->
+    <link href="assets/css/custom-styles.css" rel="stylesheet"/>
+    <!-- Google Fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
         $(function () {
             $("#thankyoudiv").hide();
             function swapDivs(tohide, toshow) {
