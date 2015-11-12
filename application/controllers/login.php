@@ -21,7 +21,6 @@ class Login extends My_Controller {
         $user = new User_m();
         $results = $user->authenticate($userName, $password);
         if (count($results) == 1) {
-            $this->load->library('session');
             $this->session->set_userdata(array(
                 'userId' => $results[0]->id,
                 'userName' => $results[0]->name,
@@ -47,7 +46,6 @@ class Login extends My_Controller {
     }
 
     public function logout() {
-        $this->load->library('session');
         $this->session->unset_userdata('userId');
         $this->session->unset_userdata('userName');
         $this->session->unset_userdata('userRole');
