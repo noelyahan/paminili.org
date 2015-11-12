@@ -20,6 +20,7 @@ class Post_m extends MY_Model {
     function get_all_posts() {
         $this->db->select('*');
         $this->db->from('post');
+        $this->db->order_by("timestamp", "desc");
         $query = $this->db->get();
         return $query->result_array();
     }
