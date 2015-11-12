@@ -9,7 +9,6 @@
 
     <link href="<?php echo base_url(); ?>assets/css/bootstrap.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>assets/css/font-awesome.css" rel="stylesheet">
-    <!--        <link href="<?php echo base_url(); ?>assets/js/morris/morris-0.4.3.min.css" rel="stylesheet">-->
     <link href="<?php echo base_url(); ?>assets/css/custom-styles.css" rel="stylesheet">
 
     <!-- Google Fonts-->
@@ -22,23 +21,18 @@
 <div id="wrapper">
     <nav class="navbar navbar-default top-navbar" role="navigation">
         <div class="navbar-header">
-            <a class="navbar-brand" href="post_test.php">Paminili.org</a>
+            <a class="navbar-brand" href="<?php echo base_url()?>">Paminili.org</a>
         </div>
 
         <ul class="nav navbar-top-links navbar-right">
             <li>
-                <a href="post_test.php">
-                    Home
-                </a>
-            </li>
-            <li>
-                <a href="questions.php">
+                <a href="<?php echo base_url(); ?>main/">
                     Feedback Questionnaire
                 </a>
             </li>
             <!-- /.dropdown -->
             <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                <a href="<?php echo base_url()?>statistics/">
                     View Statistics
                 </a>
             </li>
@@ -56,10 +50,10 @@
                 <ul class="dropdown-menu dropdown-user">
                     <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
                     </li>
-                    <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                    <li><a href="#"><i class="fa fa-sign-in fa-fw"></i> Login</a>
                     </li>
                     <li class="divider"></li>
-                    <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                    <li><a href="<?php echo base_url()?>login/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                     </li>
                 </ul>
                 <!-- /.dropdown-user -->
@@ -72,13 +66,13 @@
             <div class="panel panel-primary text-center no-boder bg-color-blue panel-large-margin">
                 <div class="panel-body">
                     Best Police Stations</br>
-                    <img src="assets/img/graph1.PNG"/>
+                    <img src="<?php echo base_url()?>assets/img/graph1.PNG"/>
                 </div>
             </div>
             <div class="panel panel-primary text-center no-boder bg-color-blue panel-large-margin">
                 <div class="panel-body">
                     Worst Police Stations</br>
-                    <img src="assets/img/graph1.PNG"/>
+                    <img src="<?php echo base_url()?>assets/img/graph1.PNG"/>
                 </div>
             </div>
         </div>
@@ -237,14 +231,14 @@
         <div class="col-md-2">
             <div class="panel panel-primary text-center no-boder bg-color-blue">
                 <div class="panel-body">
-                    <img src="assets/img/add2.PNG"/>
+                    <img src="<?php echo base_url()?>assets/img/add2.PNG"/>
                 </div>
             </div>
         </div>
         <div class="col-md-2">
             <div class="panel panel-primary text-center no-boder bg-color-blue">
                 <div class="panel-body">
-                    <img src="assets/img/add3.PNG"/>
+                    <img src="<?php echo base_url()?>assets/img/add3.PNG"/>
                 </div>
             </div>
         </div>

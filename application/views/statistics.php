@@ -54,7 +54,7 @@
     <meta name="generator" content="Bootply">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="Bootstrap  example snippet for Bootstrap.">
-    <link href="<?php echo base_url();?>/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/css/bootstrap.min.css" rel="stylesheet">
 
     <!--[if lt IE 9]>
     <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -160,10 +160,10 @@
 
 
 <!--<script async="" src="//www.google-analytics.com/analytics.js"></script>-->
-<script type="text/javascript" src="<?php echo base_url();?>/assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery.min.js"></script>
 
 
-<script type="text/javascript" src="<?php echo base_url();?>/assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
 
 
 <script type="text/javascript" src="<?php echo base_url();?>/assets/js/angular.min.js"></script>
