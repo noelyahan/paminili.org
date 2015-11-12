@@ -25,4 +25,9 @@ class Comment_m extends MY_Model {
         $data = $this->get();
         var_dump($data);
     }
+    
+    function  get_comments($post_id){
+        $query = $this->db->get_where('comment', array('post_id' => $post_id),0, 0);
+        return $query->result_array();
+    }
 }

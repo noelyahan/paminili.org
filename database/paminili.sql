@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 11, 2015 at 11:40 AM
+-- Generation Time: Nov 12, 2015 at 02:36 AM
 -- Server version: 5.6.12-log
 -- PHP Version: 5.4.12
 
@@ -46,8 +46,8 @@ CREATE TABLE IF NOT EXISTS `comment` (
 --
 
 INSERT INTO `comment` (`comment_id`, `description`, `vote_up`, `vote_down`, `timestamp`, `post_id`, `user_id`) VALUES
-(2, 'I am a test version', 0, 0, '2015-11-09 20:32:25', 3, 2),
-(3, 'I am a test version', 0, 0, '2015-11-09 20:41:32', 3, 2);
+(2, 'Test Comment 1', 0, 0, '2015-11-11 21:58:58', 3, 2),
+(3, 'Test Comment 2', 0, 0, '2015-11-11 21:59:11', 3, 2);
 
 -- --------------------------------------------------------
 
@@ -164,14 +164,15 @@ CREATE TABLE IF NOT EXISTS `post` (
   `user_id` int(11) NOT NULL,
   PRIMARY KEY (`post_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `post`
 --
 
 INSERT INTO `post` (`post_id`, `post`, `vote_up`, `vote_down`, `timestamp`, `user_id`) VALUES
-(3, 'This is my test post', 1, 0, '2015-11-11 11:33:43', 2);
+(3, 'This is my test post', 1, 0, '2015-11-11 11:33:43', 2),
+(4, ' Behalf of Batch Reps,', 0, 0, '2015-11-11 19:25:28', 2);
 
 -- --------------------------------------------------------
 
@@ -233,8 +234,8 @@ CREATE TABLE IF NOT EXISTS `reply_comment` (
 --
 
 INSERT INTO `reply_comment` (`reply_id`, `description`, `timestamp`, `vote_up`, `vote_down`, `user_id`, `comment_id`) VALUES
-(1, 'This is my test reply comment', '2015-11-09 20:53:19', 0, 0, 2, 2),
-(2, 'This is my test reply comment', '2015-11-09 15:39:29', 0, 0, 2, 2);
+(1, 'This is my test reply comment 1', '2015-11-11 21:59:24', 0, 0, 2, 2),
+(2, 'This is my test reply comment 2', '2015-11-11 21:59:36', 0, 0, 2, 2);
 
 -- --------------------------------------------------------
 
