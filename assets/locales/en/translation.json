@@ -1,146 +1,151 @@
 {
-  "app":{
-    "name":"i18next"
-  },
-  "details": {
-    "buttons": {
-      "submitcomplain": "Submit Complain",
-      "view_police_rank": "View Police Rank",
-      "help": "Help"
+    "app": {
+        "name": "i18next"
     },
-    "thankyou" : "You successfully submitted your feedback. Click below to view statistics.",
-    "statistic" :{
-        "titles" :{
-          "title" : "Statistic",
-          "bestrate" : "Best Rated police station",
-          "rape": "Police station with highest rape complains",
-          "child": "Police station with highest child abuse complains",
-          "domestic": "Police station with highest domestic Violence complains",
-          "sexual": "Problem categories reported in the country",
-          "theft": "Police station with highest theft complains",
-          "traffic": "Police station with highest traffic offences complains",
-          "other": "Police station with highest other complains",
-          "worst" : "Worst rated police station",
-          "home": "Home Page"
-        }
-    },
-    "province":{
-      "question" : "Select the province of the relevant police station",
-      "province1" : "Central",
-      "province2" : "Eastern",
-      "province3" : "North Central",
-      "province4" : "Northern",
-      "province5" : "Southern"
-    },
-    "district":{
-      "question" : "Select the district",
-      "district1" : "Hambanthota",
-      "district2" : "Galle",
-      "district3" : "Mathara"
-    },
-    "police_stations":{
-      "station1" :  "Embilipitiya",
-      "station2" : "Thangalla",
-      "station3" : "Lunugamwehera",
-      "station4" : "Katuwana"
-    },
-    "questions": {
-      "question1": "Select the Police Station",
-      "question2": {
-        "value": "Select the type of your complain",
-        "answers": {
-          "answer1": "Rape",
-          "answer2": "Child abuse",
-          "answer3": "Domestic Violence",
-          "answer4": "Sexual Harassment",
-          "answer5": "Theft",
-          "answer6": "Traffic Offences",
-          "answer7": "Other"
-        }
-      },
-      "question3": {
-        "value": "Was your complaint written down?",
-        "answers": {
-          "answer1": "Yes",
-          "answer2": "No"
-        }
-      },
-      "question4": {
-        "value": "How long did the Police take to start recording your complaint?",
-        "answers": {
-          "answer1": "Within 10 minutes",
-          "answer2": "10-20 Minutes",
-          "answer3": "20-30 Minutes",
-          "answer4": "More than 30 Minutes"
-        }
-      },
-      "question5": {
-        "value": "Was it recorded in our language?",
-        "answers": {
-          "answer1": {
-            "value": "Yes",
-            "option1": "I read and signed it",
-            "option2": "It was read to me and I signed",
-            "option3": "It was not read but signed",
-            "option4": "It was neither read nor signed"
-          },
-          "answer2": {
-            "value": "No",
-            "option1": {
-              "value": "Was a translator provided?",
-              "answer1": "Yes",
-              "answer2": "No"
+    "details": {
+        "buttons": {
+            "submitcomplain": "Submit Complain",
+            "view_police_rank": "View Police Rank",
+            "help": "Help"
+        },
+        "statistic": {
+            "titles": {
+                "title": "Statistic",
+                "bestrate": "Best Rated police station",
+                "rape": "Police station with highest rape complains",
+                "child": "Police station with highest child abuse complains",
+                "domestic": "Police station with highest domestic Violence complains",
+                "sexual": "Problem categories reported in the country",
+                "theft": "Police station with highest theft complains",
+                "traffic": "Police station with highest traffic offences complains",
+                "other": "Police station with highest other complains",
+                "worst": "Worst rated police station",
+                "home": "Home Page"
             }
-          }
+        },
+        "province": {
+            "question": "Select the province of the relevant police station",
+            "province1": "Central",
+            "province2": "Eastern",
+            "province3": "North Central",
+            "province4": "Northern",
+            "province5": "Southern"
+        },
+        "district": {
+            "question": "Select the district",
+            "district1": "Hambanthota",
+            "district2": "Galle",
+            "district3": "Mathara"
+        },
+        "police_stations": {
+            "station1": "Embilipitiya",
+            "station2": "Thangalla",
+            "station3": "Lunugamwehera",
+            "station4": "Katuwana"
+        },
+        "questions": {
+            "question1": "Select the Police Station",
+            "question3": {
+                "value": "Was your complaint written down?",
+                "answers": {
+                    "answer1": "Yes",
+                    "answer2": "No"
+                }
+            },
+            "question4": {
+                "value": "How long did the Police take to start recording your complaint?",
+                "answers": {
+                    "answer1": "Within 10 minutes",
+                    "answer2": "10-20 Minutes",
+                    "answer3": "20-30 Minutes",
+                    "answer4": "More than 30 Minutes"
+                }
+            },
+            "question5": {
+                "value": "Was it taken down in your language?",
+                "answers": {
+                    "answer1": {
+                        "value": "Yes",
+                        "option1": "I read and signed it",
+                        "option2": "It was read to me and I signed",
+                        "option3": "It was not read but signed",
+                        "option4": "It was neither read nor signed"
+                    },
+                    "answer2": {
+                        "value": "No",
+                        "option1": {
+                            "value": "Was a translator provided?",
+                            "answer1": "Yes",
+                            "answer2": "No"
+                        }
+                    }
+                }
+            },
+            "question6": {
+                "value": "Overall response?",
+                "answers": {
+                    "answer1": {
+                        "value": "Overall response :Efficient",
+                        "option1": "Yes",
+                        "option2": "No"
+                    },
+                    "answer2": {
+                        "value": "Overall response :Intimidating ",
+                        "option1": "Yes",
+                        "option2": "No"
+                    },
+                    "answer3": {
+                        "value": "Overall response :Friendly",
+                        "option1": "Yes",
+                        "option2": "No"
+                    },
+                    "answer4": {
+                        "value": "Overall response :Humiliating",
+                        "option1": "Yes",
+                        "option2": "No"
+                    }
+                }
+            },
+            "question7": {
+                "value": "Select the type of your complain",
+                "answers": {
+                    "answer1": "Rape",
+                    "answer2": "Child abuse",
+                    "answer3": "Domestic Violence",
+                    "answer4": "Sexual Harassment",
+                    "answer5": "Theft",
+                    "answer6": "Traffic Offences",
+                    "answer7": "Other"
+                }
+            },
+            "question8": {
+                "value": "Was there an officer from the Police Women’s and Children’s Bureau present to attend to your complaint?",
+                "answers": {
+                    "answer1": "Yes",
+                    "answer2": "No",
+                    "answer3": "Yes, but she did not attend to me."
+                }
+            },
+            "question9": {
+                "value": "Were you taken to / facilitated to go to the JMO for a medical examination",
+                "answers": {
+                    "answer1": "No",
+                    "answer2": {
+                        "value": "Yes",
+                        "option1": "Within 1-6 hours",
+                        "option2": "Within 6-12 hours",
+                        "option3": "Within 12-24 hours",
+                        "option4": "More than 24 hours"
+                    }
+                }
+            },
+            "question10": {
+                "value": "Did a Police officer visit the crime scene immediately / within an hour of your complaint?",
+                "answers": {
+                    "answer1": "Yes",
+                    "answer2": "No"
+                }
+            }
         }
-      },
-      "question6": {
-        "value": "If it is a complaint related to a woman or child,Were you given the assistance of a female police officer?",
-        "answers": {
-          "answer1": "Not applicable",
-          "answer2": "Yes",
-          "answer3": "No"
-        }
-      },
-      "question7": {
-        "value": "How long it was taken to direct to medical services?",
-        "answers": {
-          "answer1": "Not applicable",
-          "answer2": {
-            "value": "Yes",
-            "option1": "Within 1-6 Hours",
-            "option1": "Within 6-12 Hours",
-            "option3": "Within 12-24 hours",
-            "option4": "More than 24 hours"
-          },
-          "answer3": "Not sent"
-        }
-      },
-      "question8": {
-        "value": "Overall response?",
-        "answers": {
-          "answer1": {
-            "value": "Overall response :Efficient ?",
-            "option1": "Yes",
-            "option2": "No"
-          },
-          "answer2": {
-            "value": "Overall response : Intimidating ",
-            "option1": "Yes",
-            "option2": "No"
-          },
-          "answer3": {
-            "value": "Overall response :menacing",
-            "option1": "Yes",
-            "option2": "No"
-          },
-          "answer4": {
-            "value": "Overall response :Humiliating",
-            "option1": "Yes",
-            "option2": "No"
-          }
-        }
-      }
     }
-  }
 }
