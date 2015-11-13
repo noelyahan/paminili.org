@@ -6,8 +6,7 @@
         <title>Bootstrap Login Form</title>
         <meta name="generator" content="Bootply" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <link href="<?php echo base_url(); ?>assets/css/bootstrap.min.css" rel="stylesheet">
-        <link href="<?php echo base_url(); ?>assets/css/styles.css" rel="stylesheet">
+        <link href="<?php echo base_url(); ?>assets/css/bootstrap.css" rel="stylesheet">
         <script src="<?php echo base_url(); ?>assets/js/view/login.js" type="text/javascript"></script>
         <script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
         <script type="text/javascript">
