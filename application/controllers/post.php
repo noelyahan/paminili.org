@@ -22,14 +22,20 @@ class Post extends My_Controller {
         
         $this->load->model('reply_m');
         $reply_m = new Reply_m();
+        
+        $this->load->model('user_m');
+        $user_m = new User_m();
        
         for( $i = 0 ; $i < count($all_post) ; $i++ ) {
             $comments = $comment_m->get_comments($all_post[$i]["post_id"]);
             for($j = 0 ; $j < count($comments) ; $j++){
                  $replies = $reply_m->get_reply($comments[$j]["comment_id"]);
                  $comments[$j]["replies"] = $replies;
+                 $comments[$j]["commented_user"] = $user_m->getUserName($comments[$j]["user_id"])[0]["name"];
             }
             $all_post[$i]["comments"] = $comments;
+            $comment_username =
+            $all_post[$i]["post_user"] = $user_m->getUserName($all_post[$i]["user_id"])[0]["name"];    
         }
        //var_dump($all_post);
 //       for($i = 0 ; $i < count($all_post) ; $i++){

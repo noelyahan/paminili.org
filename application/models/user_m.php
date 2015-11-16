@@ -14,5 +14,12 @@ class User_m extends CI_Model {
                                     ");
         return $query->result();
     }
+    
+    function getUserName($userid){
+        $query = $this->db->query(" SELECT name FROM user
+                                    WHERE id=$userid
+                                    ");
+        return  $query->result_array();
+    }
 
 }

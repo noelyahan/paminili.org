@@ -93,7 +93,7 @@
 
                         <h4 class="page-header bg-color-blue bold">
                             <img src="<?php echo base_url(); ?>assets/img/user_icon.png"/>
-                            <?php echo $all_posts[$i]["user_id"] ?>
+                            <?php echo $all_posts[$i]["post_user"] ?>
                             <small><?php echo $all_posts[$i]["timestamp"] ?></small>
                         </h4>
                         <div class="page-header">
@@ -124,7 +124,7 @@
                                 <div class="col-md-12 panel">
                                     <div class="col-md-1"><img
                                             src="<?php echo base_url(); ?>assets/img/comment_user_icon.png"/></div>
-                                    <h5 class="bg-color-blue bold"><?php echo $comments[$j]["user_id"] ?>
+                                    <h5 class="bg-color-blue bold"><?php echo $comments[$j]["commented_user"] ?>
                                         <small><?php echo $comments[$j]["timestamp"] ?></small>
                                     </h5>
                                     <div
