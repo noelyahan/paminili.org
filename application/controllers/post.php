@@ -44,7 +44,7 @@ class Post extends My_Controller {
 //           }
 //       }
        $data["all_posts"] = $all_post;
-       $data["user_name"] = "Sachith Ushan";
+       $data["user_name"] = $this->session->userdata('userName');;
        
        $this->load->view('post_test',$data);
     }

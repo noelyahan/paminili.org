@@ -23,7 +23,7 @@
 
         <ul class="nav navbar-top-links navbar-right">
             <li>
-                <a href="<?php echo base_url(); ?>main/">
+                <a href="<?php echo base_url(); ?>main/index">
                     Feedback Questionnaire
                 </a>
             </li>
@@ -47,7 +47,7 @@
                 <ul class="dropdown-menu dropdown-user">
                     <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
                     </li>
-                    <li><a href="#"><i class="fa fa-sign-in fa-fw"></i> Login</a>
+                    <li><a href="<?php echo base_url()?>login/logout"><i class="fa fa-sign-in fa-fw"></i> Login</a>
                     </li>
                     <li class="divider"></li>
                     <li><a href="<?php echo base_url()?>login/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>

@@ -23,39 +23,48 @@ class Main extends My_Controller {
     }
 
     function loadBestRatedPoliceStations() {
-        $this->controlUserViews('graphs/bestRatedPoliceStations');
+        //$this->controlUserViews('graphs/bestRatedPoliceStations');
+        $this->load->view('graphs/bestRatedPoliceStations');
     }
 
     public function loadHighestChildAbuseComplains() {
-        $this->controlUserViews('graphs/highestChildAbuseComplains');
+        //$this->controlUserViews('graphs/highestChildAbuseComplains');
+        $this->load->view('graphs/highestChildAbuseComplains');
     }
 
     public function loadHighestDomesticViolenceComplains() {
-        $this->controlUserViews('graphs/highestDomesticViolenceComplains');
+        //$this->controlUserViews('graphs/highestDomesticViolenceComplains');
+        $this->load->view('graphs/highestDomesticViolenceComplains');
     }
 
     public function loadHighestOtherComplains() {
-        $this->controlUserViews('graphs/highestOtherComplains');
+        //$this->controlUserViews('graphs/highestOtherComplains');
+        $this->load->view('graphs/highestOtherComplains');
     }
 
     public function loadHighestRapeComplains() {
-        $this->controlUserViews('graphs/highestRapeComplains');
+        //$this->controlUserViews('graphs/highestRapeComplains');
+        $this->load->view('graphs/highestRapeComplains');
     }
 
     public function loadHighestTheftComplains() {
-        $this->controlUserViews('graphs/highestTheftComplains');
+        //$this->controlUserViews('graphs/highestTheftComplains');
+        $this->load->view('graphs/highestTheftComplains');
     }
 
     public function loadHighestTrafficOffenceComplains() {
-        $this->controlUserViews('graphs/highestTrafficOffencesComplains');
+        //$this->controlUserViews('graphs/highestTrafficOffencesComplains');
+        $this->load->view('graphs/highestTrafficOffencesComplains');
     }
 
     public function loadProblemTypesGraph() {
-        $this->controlUserViews('graphs/problemTypeCount');
+        //$this->controlUserViews('graphs/problemTypeCount');
+        $this->load->view('graphs/problemTypeCount');
     }
 
     public function loadWorstRatedPoliceStations() {
-        $this->controlUserViews('graphs/worstRatedPoliceStations');
+        //$this->controlUserViews('graphs/worstRatedPoliceStations');
+        $this->load->view('graphs/worstRatedPoliceStations');
     }
 
     public function post_test() {

@@ -258,8 +258,6 @@
                 <meta name="generator" content="Bootply">
                     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
                         <meta name="description" content="Bootstrap  example snippet for Bootstrap.">
-                            <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
-
                                 <!--[if lt IE 9]>
                                 <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
                                 <![endif]-->
@@ -279,11 +277,6 @@
                                                             <li>
                                                                 <a href="<?php echo base_url() ?>">
                                                                     Home
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="questions.php">
-                                                                    Feedback Questionnaire
                                                                 </a>
                                                             </li>
                                                             <!-- /.dropdown -->
@@ -652,7 +645,7 @@
                                                                                                                                                                                                         <p class="lead">You successfully submitted your feedback. Click below to view statistics.</p>
                                                                                                                                                                                                         <br>
                                                                                                                                                                                                         <div class="container-fluid">
-                                                                                                                                                                                                        <a href="#" class="btn btn-primary btn-lg btn-block" id="sinhala">View Statistics.</a>
+                                                                                                                                                                                                        <a href="<?php echo base_url() ?>statistics/" class="btn btn-primary btn-lg btn-block" id="sinhala">View Statistics.</a>
                                                                                                                                                                                                         </div>
                                                                                                                                                                                                         </div>
                                                                                                                                                                                                         </div>

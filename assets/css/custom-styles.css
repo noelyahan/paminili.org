@@ -25,9 +25,11 @@ body {
 
 #page-inner {
     width: 100%;
+    height: 100%;
+    margin: 10px 20px 10px 0px;
     background-color: #E5EBF2;
     padding: 10px;
-    position: absolute;
+    min-height: 1700px;
 }
 
 .text-center {
