@@ -25,52 +25,47 @@
 
         <div id="wrapper">
             <nav class="navbar navbar-default top-navbar" role="navigation">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="<?php echo base_url() ?>">Paminili.org</a>
-                </div>
+            <div class="navbar-header">
+                <a class="navbar-brand" href="<?php echo base_url() ?>">Paminili.org</a>
+            </div>
 
-                <ul class="nav navbar-top-links navbar-right">
-                    <li>
-                        <a href="<?php echo base_url() ?>">
-                            Home
-                        </a>
-                    </li>
-                    <li>
-                        <a href="questions.php">
-                            Feedback Questionnaire
-                        </a>
-                    </li>
-                    <!-- /.dropdown -->
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
-                            View Statistics
-                        </a>
-                    </li>
-                    <!-- /.dropdown -->
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
-                            About Us
-                        </a>
-                    </li>
-                    <!-- /.dropdown -->
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
-                            <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
-                        </a>
-                        <ul class="dropdown-menu dropdown-user">
-                            <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-sign-in fa-fw"></i> Login</a>
-                            </li>
-                            <li class="divider"></li>
-                            <li><a href="<?php echo base_url() ?>login/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                            </li>
-                        </ul>
-                        <!-- /.dropdown-user -->
-                    </li>
-                    <!-- /.dropdown -->
-                </ul>
-            </nav>
+            <ul class="nav navbar-top-links navbar-right">
+                <li>
+                    <a href="<?php echo base_url() ?>">
+                        Home
+                    </a>
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a href="<?php echo base_url() ?>statistics/">
+                        View Statistics
+                    </a>
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                        About Us
+                    </a>
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        </li>
+                        <li><a href="<?php echo base_url() ?>login/logout"><i class="fa fa-sign-in fa-fw"></i> Login</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="<?php echo base_url() ?>login/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+        </nav>
             <!--    <div id="page-wrapper">-->
             <div id="page-inner">
                 <div class="col-md-9">

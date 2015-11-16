@@ -25,11 +25,6 @@
                             Home
                         </a>
                     </li>
-                    <li>
-                        <a href="questions.php">
-                            Feedback Questionnaire
-                        </a>
-                    </li>
                     <!-- /.dropdown -->
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
