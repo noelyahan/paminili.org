@@ -56,6 +56,8 @@ $route['translate_uri_dashes'] = FALSE;
 // user routes for add post, comments & replys
 $route['user/post/add'] = 'user/add_post';
 $route['user/comment/add'] = 'user/add_comment';
+$route['user/vote/add'] = 'user/add_vote';
+
 $route['user/reply/add'] = 'user/add_reply';
 
 // login route
