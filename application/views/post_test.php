@@ -83,7 +83,7 @@
                     <textArea id="post_txt" class="form-control"></textArea></br>
                     <div class="text-right">
                         <input id="post_btn" class="btn btn-primary" type="button" value="Post"/>
-                    </div>
+                    </divp
                 </div>
             </div>
 
@@ -100,13 +100,13 @@
                             <?php echo $all_posts[$i]["post"] ?>
                         </div>
                         <div class="text-left">
-                            <div class="bg-color-blue col-md-2"><h6><img
-                                        src="<?php echo base_url(); ?>assets/img/like_icon.png"/>Like
+                            <div class="bg-color-blue col-md-2"><a id="post_like" data-postId="<?php echo $all_posts[$i]["post_id"];?>" data-votetype="1" data-table="post"><img
+                                        src="<?php echo base_url(); ?>assets/img/like_icon.png"/></a><h6>Like
                                     <?php echo $all_posts[$i]["vote_up"] ?>
                                 </h6>
                             </div>
-                            <div class="col-md-2"><h6><img
-                                        src="<?php echo base_url(); ?>assets/img/dislike_icon.png"/>Dislike
+                            <div class="col-md-2"><a id="post_dislike" data-postId="<?php echo $all_posts[$i]["post_id"];?>" data-votetype="0" data-table="post"><img
+                                        src="<?php echo base_url(); ?>assets/img/dislike_icon.png"/></a><h6>Dislike
                                     <?php echo $all_posts[$i]["vote_down"] ?>
                                 </h6></div>
                             <div class="col-md-5">
@@ -131,9 +131,8 @@
                                         class="col-md-12 font-black panel"><?php echo $comments[$j]["description"] ?></div>
                                     <div class="col-md-12 text-left ashbox panel panel-small">
                                         <h6>
-                                            <div class="col-md-1">Like <?php echo $comments[$j]["vote_up"] ?></div>
-                                            <div class="col-md-1">
-                                                Dislike <?php echo $comments[$j]["vote_down"] ?></div>
+                                            <div class="col-md-1"><a data-postId="<?php echo $comments[$j]["comment_id"] ?>" data-votetype="1" data-table="comment">Like</a> <?php echo $comments[$j]["vote_up"] ?></div>
+                                            <div class="col-md-1"><a data-postId="<?php echo $comments[$j]["comment_id"] ?>" data-votetype="0" data-table="comment">Dislike</a> <?php echo $comments[$j]["vote_down"] ?></div>
                                             <div class="col-md-1"><a data-toggle="collapse" data-parent="#accordion"
                                                                      href="#<?php echo $comments[$j]["comment_id"]; ?>" class="">Reply</a></div>
                                         </h6>
@@ -269,6 +268,30 @@
                 
             });
         });
+        
+        //add vote
+        $("a").click(function() {
+            var post_like_btn = $(this);
+            var post_id = post_like_btn.attr("data-postId");
+            var votetype = post_like_btn.attr("data-votetype");
+            var table = post_like_btn.attr("data-table");
+            if(post_id && votetype && table ){
+                $.post("<?php echo base_url(); ?>user/vote/add", {post_id: post_id,vote_type:votetype,table:table}, function (data) {
+                    //var p = JSON.parse(data);
+                    // this is a temp solution
+                    // need to add proper append method
+                    if(data == 'error') {
+                        alert("please log in first!");
+                    }else {
+                        location.reload();
+                    }
+                
+            }); 
+            }
+            
+        });
+        
+         
         
         
         // add comment

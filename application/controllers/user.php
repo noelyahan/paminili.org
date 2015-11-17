@@ -59,7 +59,12 @@ class User extends My_Controller {
     function add_vote() {
         $this->load->model('vote_m');
         $vote_m = new Vote_m();
-        $vote_m->add_vote(2,1,3,"post");
+        $post_id = $this->input->post('post_id');
+        $vote_type = $this->input->post('vote_type');
+        $table = $this->input->post('table');
+        $user_id = $this->session->userdata('userId');
+        //echo $post_id.":????????????????????????".$vote_type;
+        $vote_m->add_vote($user_id,$vote_type,$post_id,$table);
     }
     
 }
