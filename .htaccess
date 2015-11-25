@@ -1,3 +1,4 @@
+# this needs to enable mod_rewrite option in apache server
 <IfModule mod_rewrite.c>
 
     RewriteEngine on
